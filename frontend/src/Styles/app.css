@@ -1,0 +1,163 @@
+:root {
+  color: #172033;
+  background: #f5f7fb;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.app-shell {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #2563eb;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.05;
+}
+
+h2 {
+  margin-bottom: 0;
+  font-size: 1.2rem;
+}
+
+.hero-copy {
+  max-width: 720px;
+  color: #4b5563;
+  font-size: 1rem;
+}
+
+.demo-banner {
+  border: 1px solid #fde68a;
+  border-radius: 14px;
+  background: #fffbeb;
+  color: #92400e;
+  margin-bottom: 20px;
+  padding: 14px 16px;
+  font-weight: 700;
+}
+
+.card,
+.state-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+  margin-bottom: 24px;
+  padding: 20px;
+}
+
+.state-card {
+  color: #4b5563;
+}
+
+.error-card {
+  display: grid;
+  gap: 8px;
+  border-color: #fecaca;
+  background: #fef2f2;
+  color: #991b1b;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.section-heading span {
+  color: #64748b;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.chart-container {
+  height: 360px;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+.gas-table {
+  width: 100%;
+  min-width: 2200px;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.85rem;
+}
+
+.gas-table th,
+.gas-table td {
+  border-bottom: 1px solid #e5e7eb;
+  border-right: 1px solid #eef2f7;
+  padding: 9px 10px;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.gas-table th:first-child,
+.gas-table td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: #ffffff;
+  text-align: left;
+}
+
+.gas-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #f8fafc;
+  color: #334155;
+  font-weight: 700;
+  text-align: center;
+}
+
+.gas-table thead tr:first-child th {
+  background: #eef2ff;
+}
+
+.gas-table tbody tr:hover td {
+  background: #f8fafc;
+}

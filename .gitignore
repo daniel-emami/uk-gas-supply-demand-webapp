@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.env
+.env.*
+.DS_Store
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+/docs/
+LEARNING_GUIDE.md
+PROJECT_GUIDE.md
