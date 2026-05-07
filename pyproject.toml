@@ -27,6 +27,16 @@ gas-model-uk = "GasModelUk.Cli.cli_app:app"
 [tool.hatch.build.targets.wheel]
 packages = ["backend/GasModelUk"]
 
+[tool.hatch.build.targets.wheel.sources]
+"backend" = ""
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "/backend/GasModelUk",
+  "/README.md",
+  "/pyproject.toml",
+]
+
 [tool.uv]
 package = true
 

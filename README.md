@@ -28,7 +28,7 @@ gas-model-uk/
   data/
     demo_data.xlsx
     gas_flows.xlsx
-  src/
+  backend/
     GasModelUk/
       Api/
       Cli/
@@ -45,6 +45,25 @@ gas-model-uk/
   frontend/
   tests/
 ```
+
+## Quick run
+
+From the repository root, in terminal 1:
+
+```bash
+source .venv/bin/activate
+gas-model-uk run-etl --start-date 2026-01-01 --end-date 2026-01-07
+gas-model-uk run-api --excel-path data/gas_flows.xlsx
+```
+
+In terminal 2:
+
+```bash
+cd frontend
+npm run dev
+```
+
+Then open the Vite URL, usually `http://localhost:5173`.
 
 ## Backend setup: macOS/Linux
 
