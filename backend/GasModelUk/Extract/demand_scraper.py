@@ -18,6 +18,10 @@ class DemandScraper(BaseScraper):
     """Async placeholder scraper for UK gas demand flows."""
 
     category_key = "demand"
+    # id's are found on https://api.nationalgas.com/operationaldata/v1/publications/catalogue
+    ldz_id = "PUBOBJ1015"
+    gas_for_power_id = "PUBOBJ1017"
+    industry_id = "PUBOBJ1018"
 
     async def scrape(self, request: ScrapeRequest) -> RawDemandGasFlowDataset:
         """Return fake signed demand data for the requested gas days."""
