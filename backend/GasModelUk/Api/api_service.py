@@ -121,11 +121,11 @@ class ApiService:
         gas_day: str,
         frames: dict[str, pd.DataFrame],
     ) -> DailyGasFlowRecord:
-        demand = self._build_demand(gas_day, frames["demand"])
+        
         production_row = self._row_for_gas_day(gas_day, frames["production"])
         return DailyGasFlowRecord(
             gas_day=parse_gas_day(gas_day),
-            demand=demand,
+            demand = self._build_demand(gas_day, frames["demand"]),
             ncs=self._build_ncs(gas_day, production_row),
             ukcs=self._build_ukcs(gas_day, production_row),
             lng=self._build_lng(gas_day, frames["lng"]),
