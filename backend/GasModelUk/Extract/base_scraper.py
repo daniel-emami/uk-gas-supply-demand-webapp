@@ -9,6 +9,7 @@ from GasModelUk.Models.scrape_request import ScrapeRequest
 class BaseScraper(ABC):
     """Abstract async scraper interface for one gas flow category."""
 
+    source_name: str
     category_key: str
 
     @abstractmethod
