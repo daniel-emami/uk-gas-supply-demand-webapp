@@ -32,25 +32,28 @@ UKCS_COLUMNS = (
     "bacton_seal",
     "bacton_shell",
 )
+STORAGE_COLUMNS = (
+    "aldbrough",
+    "hatfield_moor",
+    "hill_top_farm",
+    "holehouse_farm",
+    "holford",
+    "hornsea",
+    "humbly_grove",
+    "rough",
+    "stublach",
+)
+LNG_COLUMNS = ("dragon", "isle_of_grain", "south_hook")
+CROSS_BORDER_FLOW_COLUMNS = ("iuk", "bbl", "moffat")
 
 LOWEST_LEVEL_COLUMNS = {
     "demand": ("ldz", "gas_for_power", "industry"),
-    "storage": (
-        "aldbrough",
-        "hatfield_moor",
-        "hill_top_farm",
-        "holehouse_farm",
-        "holford",
-        "hornsea",
-        "humbly_grove",
-        "rough",
-        "stublach",
-    ),
-    "lng": ("dragon", "isle_of_grain", "south_hook"),
+    "storage": STORAGE_COLUMNS,
+    "lng": LNG_COLUMNS,
     "ncs": NCS_COLUMNS,
     "ukcs": UKCS_COLUMNS,
     "production": (*NCS_COLUMNS, *UKCS_COLUMNS),
-    "cross_border_flows": ("iuk", "bbl", "moffat"),
+    "cross_border_flows": CROSS_BORDER_FLOW_COLUMNS,
 }
 
 PRODUCTION_GROUPS = {
