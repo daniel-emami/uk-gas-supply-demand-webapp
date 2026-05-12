@@ -6,15 +6,15 @@ from typing import Any
 
 from GasModelUk.Constants.gas_flow_registry import UNIT
 from GasModelUk.Constants.scraper_registry import API_IDS
-from GasModelUk.DemoData.static_demo_data import DEMO_DATA_NOTICE, get_static_demo_rows
+from GasModelUk.DemoData.static_demo_data import get_static_demo_rows
 from GasModelUk.Extract.base_scraper import BaseScraper
-from GasModelUk.Extract.request_creator import RequestCreator
 from GasModelUk.Models.cross_border_gas_flow_record import CrossBorderGasFlowRecord
 from GasModelUk.Models.raw_cross_border_gas_flow_dataset import (
     RawCrossBorderGasFlowDataset,
 )
 from GasModelUk.Models.scrape_request import ScrapeRequest
 from GasModelUk.Utilities.date_utils import parse_gas_day
+from GasModelUk.Extract.request_creator import RequestCreator
 
 logger = logging.getLogger(__name__)
 
@@ -47,16 +47,13 @@ class CrossBorderFlowsScraper(BaseScraper):
         records = tuple(
             CrossBorderGasFlowRecord(
                 gas_day=parse_gas_day(row["gas_day"]),
-                interconnector=row.get("interconnector"),
-                bbl=row.get("bbl"),
-                moffat=row.get("moffat"),
+                flows={key: value for key, value in row.items() if key != "gas_day"},
             )
             for row in rows
         )
         logger.info(
             "Finished cross-border flow scraper with %s rows. %s",
             len(records),
-            DEMO_DATA_NOTICE,
         )
         return RawCrossBorderGasFlowDataset(
             records=records, unit=UNIT, source_name="static_fake_demo"
@@ -90,14 +87,12 @@ class CrossBorderFlowsScraper(BaseScraper):
                 gas_day = publication["applicableFor"]
                 value = publication["value"]
 
-                values_by_day.setdefault(gas_day, {})[field_name] = -abs(float(value))
+                values_by_day.setdefault(gas_day, {})[field_name] = float(value)
 
         return tuple(
-            CrossBorderGasFlowRecord(
+            CrossBorderGasFlowRecord(  # TODO: NOT WRITTEN YET
                 gas_day=parse_gas_day(gas_day),
-                interconnector=values.get("interconnector"),
-                bbl=values.get("bbl"),
-                moffat=values.get("moffat"),
+                flows={key: value for key, value in values.items()},
             )
             for gas_day, values in sorted(values_by_day.items())
         )
