@@ -1,12 +1,15 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from GasModelUk.Exceptions.scraper_error import ScraperError
+from GasModelUk.Models.base_request import BaseRequest
+
 
 import requests
 
 
 @dataclass(frozen=True)
-class NationalGridPostRequest:
+class NationalGridPostRequest(BaseRequest):
     """Reusable National Grid/National Gas publication request configuration."""
 
     url: str
@@ -14,13 +17,21 @@ class NationalGridPostRequest:
     headers: dict[str, str]
     timeout: int = 60
 
-    def send_post(self, session: requests.Session | None = None) -> requests.Response:
+    def send(self, session: requests.Session | None = None) -> requests.Response:
         """Post this request and return the raw HTTP response."""
 
         client = session if session is not None else requests
-        return client.post(
+
+        response = client.post(
             url=self.url,
             json=self.payload,
             headers=self.headers,
             timeout=self.timeout,
         )
+
+        if response.status_code != 200:
+            raise ScraperError(
+                f"National Grid API request failed with status code {response.status_code}: {response.text}"
+            )
+
+        return response

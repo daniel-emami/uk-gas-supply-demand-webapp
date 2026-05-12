@@ -7,7 +7,7 @@ import requests
 from GasModelUk.Constants.gas_flow_registry import UNIT
 from GasModelUk.DemoData.static_demo_data import DEMO_DATA_NOTICE, get_static_demo_rows
 from GasModelUk.Extract.base_scraper import BaseScraper
-from GasModelUk.Extract.request_creator import create_national_grid_request
+from GasModelUk.Extract.request_creator import RequestCreator
 from GasModelUk.Models.demand_gas_flow_record import DemandGasFlowRecord
 from GasModelUk.Models.raw_demand_gas_flow_dataset import RawDemandGasFlowDataset
 from GasModelUk.Models.scrape_request import ScrapeRequest
@@ -29,13 +29,15 @@ class DemandScraper(BaseScraper):
         await asyncio.sleep(0)
         # TODO: Replace with real National Grid / National Gas demand scraping logic.
 
-        api_request = create_national_grid_request(
-            self.source_name,
-            self.category_key,
-            request,
+        request_creator = RequestCreator(
+            source_name=self.source_name,
+            category_key=self.category_key,
+            request=request,
         )
 
-        response = api_request.send_post()
+        api_request = request_creator.create_national_grid_post_request()
+
+        response = api_request.send()
 
         rows = get_static_demo_rows(
             self.category_key, request.start_date, request.end_date
@@ -55,3 +57,12 @@ class DemandScraper(BaseScraper):
         return RawDemandGasFlowDataset(
             records=records, unit=UNIT, source_name="static_fake_demo"
         )
+
+
+if __name__ == "__main__":
+    # Run a quick test scrape if this file is executed directly.
+    logging.basicConfig(level=logging.INFO)
+    test_request = ScrapeRequest(start_date="2024-01-01", end_date="2024-01-07")
+    scraper = DemandScraper()
+    dataset = asyncio.run(scraper.scrape(test_request))
+    print(dataset)
