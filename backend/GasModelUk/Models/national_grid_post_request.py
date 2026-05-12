@@ -5,7 +5,10 @@ from GasModelUk.Exceptions.scraper_error import ScraperError
 from GasModelUk.Models.base_request import BaseRequest
 
 
+import logging
 import requests
+
+logger = logging.getLogger(__name__)
 
 
 @dataclass(frozen=True)
@@ -33,5 +36,10 @@ class NationalGridPostRequest(BaseRequest):
             raise ScraperError(
                 f"National Grid API request failed with status code {response.status_code}: {response.text}"
             )
+
+        logger.info(
+            "National Grid API request succeeded with status code %s",
+            response.status_code,
+        )
 
         return response
