@@ -46,7 +46,7 @@ export interface UkcsRecord {
 }
 
 export interface CrossBorderFlowsRecord {
-  Interconnector: NullableNumber;
+  interconnector: NullableNumber;
   bbl: NullableNumber;
   moffat: NullableNumber;
   total: NullableNumber;

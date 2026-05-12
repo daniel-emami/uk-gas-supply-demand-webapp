@@ -6,8 +6,12 @@ from typing import Any
 
 import pandas as pd
 
-from GasModelUk.Api.api_models import GasFlowsPayload, GasFlowRecordPayload
-from GasModelUk.Constants.gas_flow_registry import LOWEST_LEVEL_COLUMNS, PRODUCTION_GROUPS, UNIT
+from GasModelUk.Api.api_models import GasFlowRecordPayload, GasFlowsPayload
+from GasModelUk.Constants.gas_flow_registry import (
+    LOWEST_LEVEL_COLUMNS,
+    PRODUCTION_GROUPS,
+    UNIT,
+)
 from GasModelUk.Exceptions.api_data_error import ApiDataError
 from GasModelUk.Exceptions.excel_storage_error import ExcelStorageError
 from GasModelUk.Models.cross_border_gas_flow_record import CrossBorderGasFlowRecord
@@ -18,7 +22,11 @@ from GasModelUk.Models.ncs_gas_flow_record import NcsGasFlowRecord
 from GasModelUk.Models.storage_gas_flow_record import StorageGasFlowRecord
 from GasModelUk.Models.ukcs_gas_flow_record import UkcsGasFlowRecord
 from GasModelUk.Storage.excel_storage import ExcelStorage
-from GasModelUk.Utilities.date_utils import ensure_date_order, is_within_date_filter, parse_gas_day
+from GasModelUk.Utilities.date_utils import (
+    ensure_date_order,
+    is_within_date_filter,
+    parse_gas_day,
+)
 from GasModelUk.Utilities.number_utils import sum_optional_values
 
 logger = logging.getLogger(__name__)
@@ -107,7 +115,9 @@ class ApiService:
     ) -> pd.DataFrame:
         if start_date is None and end_date is None:
             return frame
-        mask = frame["gas_day"].map(lambda gas_day: is_within_date_filter(gas_day, start_date, end_date))
+        mask = frame["gas_day"].map(
+            lambda gas_day: is_within_date_filter(gas_day, start_date, end_date)
+        )
         return frame.loc[mask].reset_index(drop=True)
 
     def _get_sorted_gas_days(self, frames: dict[str, pd.DataFrame]) -> list[str]:
@@ -129,7 +139,9 @@ class ApiService:
             ncs=self._build_ncs(gas_day, production_row),
             ukcs=self._build_ukcs(gas_day, production_row),
             lng=self._build_lng(gas_day, frames["lng"]),
-            cross_border_flows=self._build_cross_border_flows(gas_day, frames["cross_border_flows"]),
+            cross_border_flows=self._build_cross_border_flows(
+                gas_day, frames["cross_border_flows"]
+            ),
             storage=self._build_storage(gas_day, frames["storage"]),
         )
 
@@ -164,7 +176,9 @@ class ApiService:
         row = self._row_for_gas_day(gas_day, frame)
         return CrossBorderGasFlowRecord(
             gas_day=parse_gas_day(gas_day),
-            flows=self._flow_values(row, LOWEST_LEVEL_COLUMNS["cross_border_flows"]),
+            interconnector=self._number_or_none(row.get("interconnector")),
+            bbl=self._number_or_none(row.get("bbl")),
+            moffat=self._number_or_none(row.get("moffat")),
         )
 
     def _build_ncs(self, gas_day: str, row: dict[str, Any]) -> NcsGasFlowRecord:

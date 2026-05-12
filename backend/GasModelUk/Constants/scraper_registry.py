@@ -14,9 +14,9 @@ API_IDS = {
             "industry": "PUBOBJ1018",
         },
         "cross_border_flows": {
-            "INT (Interconnector)": "PUBOB2038",
-            "BBL": "PUBOBJ1307",
-            "Moffat": "PUBOB2039",
+            "interconnector": "PUBOB2038",
+            "bbl": "PUBOBJ1307",
+            "moffat": "PUBOB2039",
         },
     },
     "de_api_name": {

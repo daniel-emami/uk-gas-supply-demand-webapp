@@ -6,7 +6,6 @@ from typing import Any
 
 from GasModelUk.Constants.scraper_registry import API_IDS
 from GasModelUk.Constants.gas_flow_registry import UNIT
-from GasModelUk.DemoData.static_demo_data import DEMO_DATA_NOTICE, get_static_demo_rows
 from GasModelUk.Extract.base_scraper import BaseScraper
 from GasModelUk.Extract.request_creator import RequestCreator
 from GasModelUk.Models.demand_gas_flow_record import DemandGasFlowRecord
