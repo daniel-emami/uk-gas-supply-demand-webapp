@@ -13,6 +13,11 @@ API_IDS = {
             "gas_for_power": "PUBOBJ1017",
             "industry": "PUBOBJ1018",
         },
+        "cross_border_flows": {
+            "INT (Interconnector)": "PUBOB2038",
+            "BBL": "PUBOBJ1307",
+            "Moffat": "PUBOB2039",
+        },
     },
     "de_api_name": {
         "demand": {"placeholder": "DE_DEMAND_ID"},
