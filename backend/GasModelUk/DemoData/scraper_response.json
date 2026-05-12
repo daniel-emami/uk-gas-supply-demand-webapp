@@ -1,0 +1,209 @@
+[
+  {
+    "publicationId": "PUBOBJ1018",
+    "publicationName": "NTS Volume Offtaken, Industrial Offtake Total",
+    "publications": [
+      {
+        "applicableAt": "2024-01-01T00:00:00+00:00",
+        "applicableFor": "2024-01-01",
+        "value": "3.83073",
+        "generatedTimeStamp": "2024-01-03T14:01:00+00:00",
+        "qualityIndicator": "A",
+        "substituted": "N",
+        "createdDate": "2024-01-03T14:01:11+00:00"
+      },
+      {
+        "applicableAt": "2024-01-02T00:00:00+00:00",
+        "applicableFor": "2024-01-02",
+        "value": "4.32468",
+        "generatedTimeStamp": "2024-01-04T12:01:00+00:00",
+        "qualityIndicator": "A",
+        "substituted": "N",
+        "createdDate": "2024-01-04T12:01:14+00:00"
+      },
+      {
+        "applicableAt": "2024-01-03T00:00:00+00:00",
+        "applicableFor": "2024-01-03",
+        "value": "4.91965",
+        "generatedTimeStamp": "2024-01-04T12:01:00+00:00",
+        "qualityIndicator": "L",
+        "substituted": "N",
+        "createdDate": "2024-01-04T12:01:15+00:00"
+      },
+      {
+        "applicableAt": "2024-01-04T00:00:00+00:00",
+        "applicableFor": "2024-01-04",
+        "value": "5.30289",
+        "generatedTimeStamp": "2024-01-06T12:01:01+00:00",
+        "qualityIndicator": "A",
+        "substituted": "N",
+        "createdDate": "2024-01-06T12:01:15+00:00"
+      },
+      {
+        "applicableAt": "2024-01-05T00:00:00+00:00",
+        "applicableFor": "2024-01-05",
+        "value": "5.4333",
+        "generatedTimeStamp": "2024-01-08T12:01:01+00:00",
+        "qualityIndicator": "A",
+        "substituted": "N",
+        "createdDate": "2024-01-08T12:01:14+00:00"
+      },
+      {
+        "applicableAt": "2024-01-06T00:00:00+00:00",
+        "applicableFor": "2024-01-06",
+        "value": "5.38665",
+        "generatedTimeStamp": "2024-01-09T12:01:00+00:00",
+        "qualityIndicator": "A",
+        "substituted": "N",
+        "createdDate": "2024-01-09T12:01:13+00:00"
+      },
+      {
+        "applicableAt": "2024-01-07T00:00:00+00:00",
+        "applicableFor": "2024-01-07",
+        "value": "5.37652",
+        "generatedTimeStamp": "2024-01-08T14:01:01+00:00",
+        "qualityIndicator": "A",
+        "substituted": "N",
+        "createdDate": "2024-01-08T14:01:13+00:00"
+      }
+    ]
+  },
+  {
+    "publicationId": "PUBOBJ1015",
+    "publicationName": "NTS Volume Offtaken, LDZ Offtake Total",
+    "publications": [
+      {
+        "applicableAt": "2024-01-01T00:00:00+00:00",
+        "applicableFor": "2024-01-01",
+        "value": "156.13117",
+        "generatedTimeStamp": "2024-01-02T12:01:00+00:00",
+        "qualityIndicator": "L",
+        "substituted": "N",
+        "createdDate": "2024-01-02T12:01:14+00:00"
+      },
+      {
+        "applicableAt": "2024-01-02T00:00:00+00:00",
+        "applicableFor": "2024-01-02",
+        "value": "154.34024",
+        "generatedTimeStamp": "2024-01-03T12:01:00+00:00",
+        "qualityIndicator": "L",
+        "substituted": "N",
+        "createdDate": "2024-01-03T12:01:15+00:00"
+      },
+      {
+        "applicableAt": "2024-01-03T00:00:00+00:00",
+        "applicableFor": "2024-01-03",
+        "value": "162.67712",
+        "generatedTimeStamp": "2024-01-04T12:01:00+00:00",
+        "qualityIndicator": "L",
+        "substituted": "N",
+        "createdDate": "2024-01-04T12:01:14+00:00"
+      },
+      {
+        "applicableAt": "2024-01-04T00:00:00+00:00",
+        "applicableFor": "2024-01-04",
+        "value": "175.9564",
+        "generatedTimeStamp": "2024-01-05T12:01:01+00:00",
+        "qualityIndicator": "L",
+        "substituted": "N",
+        "createdDate": "2024-01-05T12:01:15+00:00"
+      },
+      {
+        "applicableAt": "2024-01-05T00:00:00+00:00",
+        "applicableFor": "2024-01-05",
+        "value": "182.10537",
+        "generatedTimeStamp": "2024-01-06T12:01:01+00:00",
+        "qualityIndicator": "L",
+        "substituted": "N",
+        "createdDate": "2024-01-06T12:01:16+00:00"
+      },
+      {
+        "applicableAt": "2024-01-06T00:00:00+00:00",
+        "applicableFor": "2024-01-06",
+        "value": "184.68055",
+        "generatedTimeStamp": "2024-01-07T12:01:01+00:00",
+        "qualityIndicator": "L",
+        "substituted": "N",
+        "createdDate": "2024-01-07T12:01:15+00:00"
+      },
+      {
+        "applicableAt": "2024-01-07T00:00:00+00:00",
+        "applicableFor": "2024-01-07",
+        "value": "205.64299",
+        "generatedTimeStamp": "2024-01-08T12:01:01+00:00",
+        "qualityIndicator": "L",
+        "substituted": "N",
+        "createdDate": "2024-01-08T12:01:15+00:00"
+      }
+    ]
+  },
+  {
+    "publicationId": "PUBOBJ1017",
+    "publicationName": "NTS Volume Offtaken, Powerstations Total",
+    "publications": [
+      {
+        "applicableAt": "2024-01-01T00:00:00+00:00",
+        "applicableFor": "2024-01-01",
+        "value": "19.2388",
+        "generatedTimeStamp": "2024-01-03T14:01:00+00:00",
+        "qualityIndicator": "A",
+        "substituted": "N",
+        "createdDate": "2024-01-03T14:01:11+00:00"
+      },
+      {
+        "applicableAt": "2024-01-02T00:00:00+00:00",
+        "applicableFor": "2024-01-02",
+        "value": "32.69028",
+        "generatedTimeStamp": "2024-01-04T14:01:00+00:00",
+        "qualityIndicator": "A",
+        "substituted": "N",
+        "createdDate": "2024-01-04T14:01:11+00:00"
+      },
+      {
+        "applicableAt": "2024-01-03T00:00:00+00:00",
+        "applicableFor": "2024-01-03",
+        "value": "41.68078",
+        "generatedTimeStamp": "2024-01-05T12:01:01+00:00",
+        "qualityIndicator": "A",
+        "substituted": "N",
+        "createdDate": "2024-01-05T12:01:15+00:00"
+      },
+      {
+        "applicableAt": "2024-01-04T00:00:00+00:00",
+        "applicableFor": "2024-01-04",
+        "value": "63.48649",
+        "generatedTimeStamp": "2024-01-08T14:01:01+00:00",
+        "qualityIndicator": "A",
+        "substituted": "N",
+        "createdDate": "2024-01-08T14:01:13+00:00"
+      },
+      {
+        "applicableAt": "2024-01-05T00:00:00+00:00",
+        "applicableFor": "2024-01-05",
+        "value": "54.56571",
+        "generatedTimeStamp": "2024-01-08T14:01:01+00:00",
+        "qualityIndicator": "A",
+        "substituted": "N",
+        "createdDate": "2024-01-08T14:01:13+00:00"
+      },
+      {
+        "applicableAt": "2024-01-06T00:00:00+00:00",
+        "applicableFor": "2024-01-06",
+        "value": "53.76931",
+        "generatedTimeStamp": "2024-01-09T12:01:00+00:00",
+        "qualityIndicator": "A",
+        "substituted": "N",
+        "createdDate": "2024-01-09T12:01:13+00:00"
+      },
+      {
+        "applicableAt": "2024-01-07T00:00:00+00:00",
+        "applicableFor": "2024-01-07",
+        "value": "56.21101",
+        "generatedTimeStamp": "2024-01-08T14:01:01+00:00",
+        "qualityIndicator": "A",
+        "substituted": "N",
+        "createdDate": "2024-01-08T14:01:13+00:00"
+      }
+    ]
+  }
+]
