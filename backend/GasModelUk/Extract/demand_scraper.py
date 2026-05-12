@@ -42,7 +42,7 @@ class DemandScraper(BaseScraper):
         logger.info("Finished demand scraper with %s rows. %s", len(records))
 
         return RawDemandGasFlowDataset(
-            records=records, unit=UNIT, source_name="static_fake_demo"
+            records=records, unit=UNIT, source_name=self.source_name
         )
 
     def _parse_demand_response(
