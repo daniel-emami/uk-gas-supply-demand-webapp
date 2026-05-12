@@ -41,22 +41,12 @@ class CrossBorderFlowsScraper(BaseScraper):
         response = api_request.send()
         records = self._parse_cross_border_flows_response(response.json())
 
-        rows = get_static_demo_rows(
-            self.category_key, request.start_date, request.end_date
-        )
-        records = tuple(
-            CrossBorderGasFlowRecord(
-                gas_day=parse_gas_day(row["gas_day"]),
-                flows={key: value for key, value in row.items() if key != "gas_day"},
-            )
-            for row in rows
-        )
         logger.info(
             "Finished cross-border flow scraper with %s rows. %s",
             len(records),
         )
         return RawCrossBorderGasFlowDataset(
-            records=records, unit=UNIT, source_name="static_fake_demo"
+            records=records, unit=UNIT, source_name=self.source_name
         )
 
     def _parse_cross_border_flows_response(
@@ -90,9 +80,11 @@ class CrossBorderFlowsScraper(BaseScraper):
                 values_by_day.setdefault(gas_day, {})[field_name] = float(value)
 
         return tuple(
-            CrossBorderGasFlowRecord(  # TODO: NOT WRITTEN YET
+            CrossBorderGasFlowRecord(
                 gas_day=parse_gas_day(gas_day),
-                flows={key: value for key, value in values.items()},
+                interconnector=values.get("interconnector"),
+                bbl=values.get("bbl"),
+                moffat=values.get("moffat"),
             )
             for gas_day, values in sorted(values_by_day.items())
         )
