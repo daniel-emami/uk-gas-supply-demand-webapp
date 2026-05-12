@@ -44,7 +44,7 @@ STORAGE_COLUMNS = (
     "stublach",
 )
 LNG_COLUMNS = ("dragon", "isle_of_grain", "south_hook")
-CROSS_BORDER_FLOW_COLUMNS = ("iuk", "bbl", "moffat")
+CROSS_BORDER_FLOW_COLUMNS = ("Interconnector", "bbl", "moffat")
 
 LOWEST_LEVEL_COLUMNS = {
     "demand": ("ldz", "gas_for_power", "industry"),
@@ -107,7 +107,7 @@ DISPLAY_NAMES = {
     "bacton_perenco": "Bacton Perenco",
     "bacton_seal": "Bacton SEAL",
     "bacton_shell": "Bacton Shell",
-    "iuk": "IUK",
+    "Interconnector": "Interconnector",
     "bbl": "BBL",
     "moffat": "Moffat",
 }
