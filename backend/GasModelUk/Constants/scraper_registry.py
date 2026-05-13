@@ -1,3 +1,7 @@
+from __future__ import annotations
+
+from typing import cast
+
 API_URLS = {
     "national_grid": "https://api.nationalgas.com/operationaldata/v1/publications/gasday",
 }
@@ -72,8 +76,6 @@ API_IDS = {
     },
 }
 
-
-
 def get_api_url(source_name: str) -> str:
     """Return the API URL for a persisted source name."""
 
@@ -91,10 +93,16 @@ def _flatten_publication_entries(
 ) -> dict[str, str | dict[str, str]]:
     flattened: dict[str, str | dict[str, str]] = {}
     for field_name, entry in entries.items():
-        if isinstance(entry, dict) and "publication_id" not in entry:
-            flattened.update(_flatten_publication_entries(entry))
+        if isinstance(entry, str):
+            flattened[field_name] = entry
             continue
-        flattened[field_name] = entry
+
+        if isinstance(entry, dict) and "publication_id" not in entry:
+            flattened.update(_flatten_publication_entries(cast(dict[str, object], entry)))
+            continue
+
+        if isinstance(entry, dict):
+            flattened[field_name] = cast(dict[str, str], entry)
     return flattened
 
 
