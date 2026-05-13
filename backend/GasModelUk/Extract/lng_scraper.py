@@ -5,14 +5,14 @@ import logging
 from typing import Any
 
 from GasModelUk.Constants.gas_flow_registry import UNIT
-from GasModelUk.Constants.scraper_registry import API_IDS
+from GasModelUk.Constants.scraper_registry import get_output_field_by_publication_id
 from GasModelUk.Extract.base_scraper import BaseScraper
+from GasModelUk.Extract.request_creator import RequestCreator
 from GasModelUk.Models.lng_gas_flow_record import LngGasFlowRecord
-from GasModelUk.Models.raw_lng_gas_flow_dataset import RawLngGasFlowDataset
 from GasModelUk.Models.raw_lng_gas_flow_dataset import RawLngGasFlowDataset
 from GasModelUk.Models.scrape_request import ScrapeRequest
 from GasModelUk.Utilities.date_utils import parse_gas_day
-from GasModelUk.Extract.request_creator import RequestCreator
+from GasModelUk.Utilities.number_utils import sum_optional_values
 
 logger = logging.getLogger(__name__)
 
@@ -50,14 +50,12 @@ class LngScraper(BaseScraper):
         self,
         response_json: list[dict[str, Any]],
     ) -> tuple[LngGasFlowRecord, ...]:
-        id_to_field = {
-            publication_id: field_name
-            for field_name, publication_id in API_IDS[self.source_name][
-                self.category_key
-            ].items()
-        }
+        id_to_field = get_output_field_by_publication_id(
+            self.source_name,
+            self.category_key,
+        )
 
-        values_by_day: dict[str, dict[str, float]] = {}
+        values_by_day: dict[str, dict[str, float | None]] = {}
 
         for lng_site in response_json:
             publication_id = lng_site.get("publicationId")
@@ -74,17 +72,23 @@ class LngScraper(BaseScraper):
                 gas_day = publication["applicableFor"]
                 value = publication["value"]
 
-                values_by_day.setdefault(gas_day, {})[field_name] = float(value)
+                day_values = values_by_day.setdefault(gas_day, {})
+                day_values[field_name] = sum_optional_values(
+                    [day_values.get(field_name), self._to_float_or_none(value)]
+                )
 
         return tuple(
             LngGasFlowRecord(
                 gas_day=parse_gas_day(gas_day),
-                interconnector=values.get("interconnector"),
-                bbl=values.get("bbl"),
-                moffat=values.get("moffat"),
+                flows=values,
             )
             for gas_day, values in sorted(values_by_day.items())
         )
+
+    def _to_float_or_none(self, value: Any) -> float | None:
+        if value in {None, ""}:
+            return None
+        return float(value)
 
 
 if __name__ == "__main__":
