@@ -1,15 +1,10 @@
 from __future__ import annotations
 
-
-from GasModelUk.Constants.scraper_registry import get_api_url, get_ids_by_type
-from GasModelUk.Models.national_grid_post_request import NationalGridPostRequest
-from GasModelUk.Models.scrape_request import ScrapeRequest
-from GasModelUk.Models.base_request import BaseRequest
-
-
 from dataclasses import dataclass
 
+from GasModelUk.Constants.scraper_registry import get_api_url, get_ids_by_type
 from GasModelUk.Models.base_request import BaseRequest
+from GasModelUk.Models.national_grid_post_request import NationalGridPostRequest
 from GasModelUk.Models.scrape_request import ScrapeRequest
 
 

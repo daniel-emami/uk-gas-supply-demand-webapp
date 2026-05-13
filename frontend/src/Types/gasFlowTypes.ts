@@ -9,6 +9,7 @@ export interface DemandRecord {
 
 export interface StorageRecord {
   aldbrough: NullableNumber;
+  avonmouth: NullableNumber;
   hatfield_moor: NullableNumber;
   hill_top_farm: NullableNumber;
   holehouse_farm: NullableNumber;

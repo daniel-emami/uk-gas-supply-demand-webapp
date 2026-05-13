@@ -34,6 +34,7 @@ UKCS_COLUMNS = (
 )
 STORAGE_COLUMNS = (
     "aldbrough",
+    "avonmouth",
     "hatfield_moor",
     "hill_top_farm",
     "holehouse_farm",
@@ -86,6 +87,7 @@ DISPLAY_NAMES = {
     "gas_for_power": "Gas for Power",
     "industry": "Industry",
     "aldbrough": "Aldbrough",
+    "avonmouth": "Avonmouth",
     "hatfield_moor": "Hatfield Moor",
     "hill_top_farm": "Hill Top Farm",
     "holehouse_farm": "Hole House Farm",

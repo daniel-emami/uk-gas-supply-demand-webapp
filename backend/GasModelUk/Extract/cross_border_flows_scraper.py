@@ -6,15 +6,14 @@ from typing import Any
 
 from GasModelUk.Constants.gas_flow_registry import UNIT
 from GasModelUk.Constants.scraper_registry import API_IDS
-from GasModelUk.DemoData.static_demo_data import get_static_demo_rows
 from GasModelUk.Extract.base_scraper import BaseScraper
+from GasModelUk.Extract.request_creator import RequestCreator
 from GasModelUk.Models.cross_border_gas_flow_record import CrossBorderGasFlowRecord
 from GasModelUk.Models.raw_cross_border_gas_flow_dataset import (
     RawCrossBorderGasFlowDataset,
 )
 from GasModelUk.Models.scrape_request import ScrapeRequest
 from GasModelUk.Utilities.date_utils import parse_gas_day
-from GasModelUk.Extract.request_creator import RequestCreator
 
 logger = logging.getLogger(__name__)
 
@@ -62,8 +61,8 @@ class CrossBorderFlowsScraper(BaseScraper):
 
         values_by_day: dict[str, dict[str, float]] = {}
 
-        for demand_type in response_json:
-            publication_id = demand_type.get("publicationId")
+        for pipeline in response_json:
+            publication_id = pipeline.get("publicationId")
             if not isinstance(publication_id, str):
                 continue
 
@@ -71,7 +70,7 @@ class CrossBorderFlowsScraper(BaseScraper):
             if field_name is None:
                 continue
 
-            publications = demand_type.get("publications", [])
+            publications = pipeline.get("publications", [])
 
             for publication in publications:
                 gas_day = publication["applicableFor"]
@@ -82,9 +81,7 @@ class CrossBorderFlowsScraper(BaseScraper):
         return tuple(
             CrossBorderGasFlowRecord(
                 gas_day=parse_gas_day(gas_day),
-                interconnector=values.get("interconnector"),
-                bbl=values.get("bbl"),
-                moffat=values.get("moffat"),
+                flows=values,
             )
             for gas_day, values in sorted(values_by_day.items())
         )

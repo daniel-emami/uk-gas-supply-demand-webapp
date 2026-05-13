@@ -176,9 +176,7 @@ class ApiService:
         row = self._row_for_gas_day(gas_day, frame)
         return CrossBorderGasFlowRecord(
             gas_day=parse_gas_day(gas_day),
-            interconnector=self._number_or_none(row.get("interconnector")),
-            bbl=self._number_or_none(row.get("bbl")),
-            moffat=self._number_or_none(row.get("moffat")),
+            flows=self._flow_values(row, LOWEST_LEVEL_COLUMNS["cross_border_flows"]),
         )
 
     def _build_ncs(self, gas_day: str, row: dict[str, Any]) -> NcsGasFlowRecord:
