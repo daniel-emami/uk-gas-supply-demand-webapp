@@ -1,277 +1,627 @@
 [
   {
-    "publicationId": "PUBOB371",
-    "publicationName": "System Entry Volume, Grain NTS 1, D+2",
+    "publicationId": "PUBOB2896",
+    "publicationName": "NTS Physical Flows, Aldbrough, Storage",
     "publications": [
       {
-        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableAt": "2024-01-01T00:00:00+00:00",
         "applicableFor": "2024-01-01",
-        "value": "0",
-        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
-        "qualityIndicator": "",
+        "value": "8.10188",
+        "generatedTimeStamp": "2024-01-02T12:01:00+00:00",
+        "qualityIndicator": "L",
         "substituted": "N",
-        "createdDate": "2024-02-18T09:58:24+00:00"
+        "createdDate": "2024-01-02T12:01:15+00:00"
       },
       {
-        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableAt": "2024-01-02T00:00:00+00:00",
         "applicableFor": "2024-01-02",
-        "value": "0",
-        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
-        "qualityIndicator": "",
+        "value": "3.63231",
+        "generatedTimeStamp": "2024-01-03T12:01:00+00:00",
+        "qualityIndicator": "L",
         "substituted": "N",
-        "createdDate": "2024-02-18T09:58:24+00:00"
+        "createdDate": "2024-01-03T12:01:15+00:00"
       },
       {
-        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableAt": "2024-01-03T00:00:00+00:00",
         "applicableFor": "2024-01-03",
         "value": "0",
-        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
-        "qualityIndicator": "",
+        "generatedTimeStamp": "2024-01-04T12:01:00+00:00",
+        "qualityIndicator": "L",
         "substituted": "N",
-        "createdDate": "2024-02-18T09:58:24+00:00"
+        "createdDate": "2024-01-04T12:01:14+00:00"
       },
       {
-        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableAt": "2024-01-04T00:00:00+00:00",
         "applicableFor": "2024-01-04",
         "value": "0",
-        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
-        "qualityIndicator": "",
+        "generatedTimeStamp": "2024-01-05T12:01:01+00:00",
+        "qualityIndicator": "L",
         "substituted": "N",
-        "createdDate": "2024-02-18T09:58:24+00:00"
+        "createdDate": "2024-01-05T12:01:15+00:00"
       },
       {
-        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableAt": "2024-01-05T00:00:00+00:00",
         "applicableFor": "2024-01-05",
-        "value": "0",
-        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
-        "qualityIndicator": "",
+        "value": "1.21462",
+        "generatedTimeStamp": "2024-01-06T12:01:01+00:00",
+        "qualityIndicator": "L",
         "substituted": "N",
-        "createdDate": "2024-02-18T09:58:25+00:00"
+        "createdDate": "2024-01-06T12:01:16+00:00"
       },
       {
-        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableAt": "2024-01-06T00:00:00+00:00",
         "applicableFor": "2024-01-06",
-        "value": "0",
-        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
-        "qualityIndicator": "",
+        "value": ".49051",
+        "generatedTimeStamp": "2024-01-07T12:01:01+00:00",
+        "qualityIndicator": "L",
         "substituted": "N",
-        "createdDate": "2024-02-18T09:58:25+00:00"
+        "createdDate": "2024-01-07T12:01:15+00:00"
       },
       {
-        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableAt": "2024-01-07T00:00:00+00:00",
         "applicableFor": "2024-01-07",
         "value": "0",
-        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
-        "qualityIndicator": "",
+        "generatedTimeStamp": "2024-01-08T12:01:01+00:00",
+        "qualityIndicator": "L",
         "substituted": "N",
-        "createdDate": "2024-02-18T09:58:25+00:00"
+        "createdDate": "2024-01-08T12:01:15+00:00"
       }
     ]
   },
   {
-    "publicationId": "PUBOB3473",
-    "publicationName": "System Entry Volume, Grain NTS 2, D+2",
+    "publicationId": "PUBOB1872",
+    "publicationName": "NTS Physical Flows, Avonmouth, LNG",
+    "publications": []
+  },
+  {
+    "publicationId": "PUBOB1882",
+    "publicationName": "NTS Physical Flows, Hatfield Moor, Storage",
     "publications": [
       {
-        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableAt": "2024-01-01T00:00:00+00:00",
         "applicableFor": "2024-01-01",
-        "value": "13.65279",
-        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
-        "qualityIndicator": "",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-02T12:01:00+00:00",
+        "qualityIndicator": "L",
         "substituted": "N",
-        "createdDate": "2024-02-18T09:58:24+00:00"
+        "createdDate": "2024-01-02T12:01:14+00:00"
       },
       {
-        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableAt": "2024-01-02T00:00:00+00:00",
         "applicableFor": "2024-01-02",
-        "value": "8.91748",
-        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
-        "qualityIndicator": "",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-03T12:01:00+00:00",
+        "qualityIndicator": "L",
         "substituted": "N",
-        "createdDate": "2024-02-18T09:58:24+00:00"
+        "createdDate": "2024-01-03T12:01:15+00:00"
       },
       {
-        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableAt": "2024-01-03T00:00:00+00:00",
         "applicableFor": "2024-01-03",
-        "value": "14.33631",
-        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
-        "qualityIndicator": "",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-04T12:01:00+00:00",
+        "qualityIndicator": "L",
         "substituted": "N",
-        "createdDate": "2024-02-18T09:58:24+00:00"
+        "createdDate": "2024-01-04T12:01:14+00:00"
       },
       {
-        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableAt": "2024-01-04T00:00:00+00:00",
         "applicableFor": "2024-01-04",
-        "value": "18.21653",
-        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
-        "qualityIndicator": "",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-05T12:01:01+00:00",
+        "qualityIndicator": "L",
         "substituted": "N",
-        "createdDate": "2024-02-18T09:58:24+00:00"
+        "createdDate": "2024-01-05T12:01:15+00:00"
       },
       {
-        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableAt": "2024-01-05T00:00:00+00:00",
         "applicableFor": "2024-01-05",
-        "value": "18.19824",
-        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
-        "qualityIndicator": "",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-06T12:01:01+00:00",
+        "qualityIndicator": "L",
         "substituted": "N",
-        "createdDate": "2024-02-18T09:58:25+00:00"
+        "createdDate": "2024-01-06T12:01:15+00:00"
       },
       {
-        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableAt": "2024-01-06T00:00:00+00:00",
         "applicableFor": "2024-01-06",
-        "value": "17.48318",
-        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
-        "qualityIndicator": "",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-07T12:01:01+00:00",
+        "qualityIndicator": "L",
         "substituted": "N",
-        "createdDate": "2024-02-18T09:58:25+00:00"
+        "createdDate": "2024-01-07T12:01:15+00:00"
       },
       {
-        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableAt": "2024-01-07T00:00:00+00:00",
         "applicableFor": "2024-01-07",
-        "value": "17.65885",
-        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
-        "qualityIndicator": "",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-08T12:01:01+00:00",
+        "qualityIndicator": "L",
         "substituted": "N",
-        "createdDate": "2024-02-18T09:58:25+00:00"
+        "createdDate": "2024-01-08T12:01:15+00:00"
       }
     ]
   },
   {
-    "publicationId": "PUBOB3564",
-    "publicationName": "System Entry Volume, Milford Haven - Dragon, D+2",
+    "publicationId": "PUBOBJ2041",
+    "publicationName": "NTS Physical Flows, HillTop, Storage",
     "publications": [
       {
-        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableAt": "2024-01-01T00:00:00+00:00",
         "applicableFor": "2024-01-01",
-        "value": "1.473",
-        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
-        "qualityIndicator": "",
+        "value": ".26721",
+        "generatedTimeStamp": "2024-01-02T12:01:00+00:00",
+        "qualityIndicator": "L",
         "substituted": "N",
-        "createdDate": "2024-02-18T09:58:24+00:00"
+        "createdDate": "2024-01-02T12:01:14+00:00"
       },
       {
-        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableAt": "2024-01-02T00:00:00+00:00",
         "applicableFor": "2024-01-02",
         "value": "0",
-        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
-        "qualityIndicator": "",
+        "generatedTimeStamp": "2024-01-03T12:01:00+00:00",
+        "qualityIndicator": "L",
         "substituted": "N",
-        "createdDate": "2024-02-18T09:58:24+00:00"
+        "createdDate": "2024-01-03T12:01:15+00:00"
       },
       {
-        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableAt": "2024-01-03T00:00:00+00:00",
         "applicableFor": "2024-01-03",
         "value": "0",
-        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
-        "qualityIndicator": "",
+        "generatedTimeStamp": "2024-01-04T12:01:00+00:00",
+        "qualityIndicator": "L",
         "substituted": "N",
-        "createdDate": "2024-02-18T09:58:24+00:00"
+        "createdDate": "2024-01-04T12:01:14+00:00"
       },
       {
-        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableAt": "2024-01-04T00:00:00+00:00",
         "applicableFor": "2024-01-04",
-        "value": "12.101",
-        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
-        "qualityIndicator": "",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-05T12:01:01+00:00",
+        "qualityIndicator": "L",
         "substituted": "N",
-        "createdDate": "2024-02-18T09:58:24+00:00"
+        "createdDate": "2024-01-05T12:01:15+00:00"
       },
       {
-        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableAt": "2024-01-05T00:00:00+00:00",
         "applicableFor": "2024-01-05",
         "value": "0",
-        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
-        "qualityIndicator": "",
+        "generatedTimeStamp": "2024-01-06T12:01:01+00:00",
+        "qualityIndicator": "L",
         "substituted": "N",
-        "createdDate": "2024-02-18T09:58:25+00:00"
+        "createdDate": "2024-01-06T12:01:16+00:00"
       },
       {
-        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableAt": "2024-01-06T00:00:00+00:00",
         "applicableFor": "2024-01-06",
-        "value": "16.913",
-        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
-        "qualityIndicator": "",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-07T12:01:01+00:00",
+        "qualityIndicator": "L",
         "substituted": "N",
-        "createdDate": "2024-02-18T09:58:25+00:00"
+        "createdDate": "2024-01-07T12:01:15+00:00"
       },
       {
-        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableAt": "2024-01-07T00:00:00+00:00",
         "applicableFor": "2024-01-07",
-        "value": "22.422",
-        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
-        "qualityIndicator": "",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-08T12:01:01+00:00",
+        "qualityIndicator": "L",
         "substituted": "N",
-        "createdDate": "2024-02-18T09:58:25+00:00"
+        "createdDate": "2024-01-08T12:01:15+00:00"
       }
     ]
   },
   {
-    "publicationId": "PUBOB3480",
-    "publicationName": "System Entry Volume, South Hook, D+2",
+    "publicationId": "PUBOB1936",
+    "publicationName": "NTS Physical Flows, HoleHousFm, Storage",
     "publications": [
       {
-        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableAt": "2024-01-01T00:00:00+00:00",
         "applicableFor": "2024-01-01",
-        "value": "23.2757",
-        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
-        "qualityIndicator": "",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-02T12:01:00+00:00",
+        "qualityIndicator": "L",
         "substituted": "N",
-        "createdDate": "2024-02-18T09:58:24+00:00"
+        "createdDate": "2024-01-02T12:01:14+00:00"
       },
       {
-        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableAt": "2024-01-02T00:00:00+00:00",
         "applicableFor": "2024-01-02",
-        "value": "30.2614",
-        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
-        "qualityIndicator": "",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-03T12:01:00+00:00",
+        "qualityIndicator": "L",
         "substituted": "N",
-        "createdDate": "2024-02-18T09:58:24+00:00"
+        "createdDate": "2024-01-03T12:01:15+00:00"
       },
       {
-        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableAt": "2024-01-03T00:00:00+00:00",
         "applicableFor": "2024-01-03",
-        "value": "30.8054",
-        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
-        "qualityIndicator": "",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-04T12:01:00+00:00",
+        "qualityIndicator": "L",
         "substituted": "N",
-        "createdDate": "2024-02-18T09:58:24+00:00"
+        "createdDate": "2024-01-04T12:01:14+00:00"
       },
       {
-        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableAt": "2024-01-04T00:00:00+00:00",
         "applicableFor": "2024-01-04",
-        "value": "23.0892",
-        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
-        "qualityIndicator": "",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-05T12:01:01+00:00",
+        "qualityIndicator": "L",
         "substituted": "N",
-        "createdDate": "2024-02-18T09:58:24+00:00"
+        "createdDate": "2024-01-05T12:01:15+00:00"
       },
       {
-        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableAt": "2024-01-05T00:00:00+00:00",
         "applicableFor": "2024-01-05",
-        "value": "23.0437",
-        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
-        "qualityIndicator": "",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-06T12:01:01+00:00",
+        "qualityIndicator": "L",
         "substituted": "N",
-        "createdDate": "2024-02-18T09:58:25+00:00"
+        "createdDate": "2024-01-06T12:01:15+00:00"
       },
       {
-        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableAt": "2024-01-06T00:00:00+00:00",
         "applicableFor": "2024-01-06",
-        "value": "23.5364",
-        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
-        "qualityIndicator": "",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-07T12:01:01+00:00",
+        "qualityIndicator": "L",
         "substituted": "N",
-        "createdDate": "2024-02-18T09:58:25+00:00"
+        "createdDate": "2024-01-07T12:01:15+00:00"
       },
       {
-        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableAt": "2024-01-07T00:00:00+00:00",
         "applicableFor": "2024-01-07",
-        "value": "23.4532",
-        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
-        "qualityIndicator": "",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-08T12:01:01+00:00",
+        "qualityIndicator": "L",
         "substituted": "N",
-        "createdDate": "2024-02-18T09:58:25+00:00"
+        "createdDate": "2024-01-08T12:01:15+00:00"
+      }
+    ]
+  },
+  {
+    "publicationId": "PUBOBJ2002",
+    "publicationName": "NTS Physical Flows, Holford, Storage",
+    "publications": [
+      {
+        "applicableAt": "2024-01-01T00:00:00+00:00",
+        "applicableFor": "2024-01-01",
+        "value": "5.96113",
+        "generatedTimeStamp": "2024-01-02T12:01:00+00:00",
+        "qualityIndicator": "L",
+        "substituted": "N",
+        "createdDate": "2024-01-02T12:01:15+00:00"
+      },
+      {
+        "applicableAt": "2024-01-02T00:00:00+00:00",
+        "applicableFor": "2024-01-02",
+        "value": "4.77683",
+        "generatedTimeStamp": "2024-01-03T12:01:00+00:00",
+        "qualityIndicator": "L",
+        "substituted": "N",
+        "createdDate": "2024-01-03T12:01:16+00:00"
+      },
+      {
+        "applicableAt": "2024-01-03T00:00:00+00:00",
+        "applicableFor": "2024-01-03",
+        "value": "4.67616",
+        "generatedTimeStamp": "2024-01-04T12:01:00+00:00",
+        "qualityIndicator": "L",
+        "substituted": "N",
+        "createdDate": "2024-01-04T12:01:15+00:00"
+      },
+      {
+        "applicableAt": "2024-01-04T00:00:00+00:00",
+        "applicableFor": "2024-01-04",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-05T12:01:01+00:00",
+        "qualityIndicator": "L",
+        "substituted": "N",
+        "createdDate": "2024-01-05T12:01:15+00:00"
+      },
+      {
+        "applicableAt": "2024-01-05T00:00:00+00:00",
+        "applicableFor": "2024-01-05",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-06T12:01:01+00:00",
+        "qualityIndicator": "L",
+        "substituted": "N",
+        "createdDate": "2024-01-06T12:01:16+00:00"
+      },
+      {
+        "applicableAt": "2024-01-06T00:00:00+00:00",
+        "applicableFor": "2024-01-06",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-07T12:01:01+00:00",
+        "qualityIndicator": "L",
+        "substituted": "N",
+        "createdDate": "2024-01-07T12:01:15+00:00"
+      },
+      {
+        "applicableAt": "2024-01-07T00:00:00+00:00",
+        "applicableFor": "2024-01-07",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-08T12:01:01+00:00",
+        "qualityIndicator": "L",
+        "substituted": "N",
+        "createdDate": "2024-01-08T12:01:15+00:00"
+      }
+    ]
+  },
+  {
+    "publicationId": "PUBOB1939",
+    "publicationName": "NTS Physical Flows, Hornsea, Storage",
+    "publications": [
+      {
+        "applicableAt": "2024-01-01T00:00:00+00:00",
+        "applicableFor": "2024-01-01",
+        "value": ".41922",
+        "generatedTimeStamp": "2024-01-02T12:01:00+00:00",
+        "qualityIndicator": "L",
+        "substituted": "N",
+        "createdDate": "2024-01-02T12:01:14+00:00"
+      },
+      {
+        "applicableAt": "2024-01-02T00:00:00+00:00",
+        "applicableFor": "2024-01-02",
+        "value": ".15251",
+        "generatedTimeStamp": "2024-01-03T12:01:00+00:00",
+        "qualityIndicator": "L",
+        "substituted": "N",
+        "createdDate": "2024-01-03T12:01:15+00:00"
+      },
+      {
+        "applicableAt": "2024-01-03T00:00:00+00:00",
+        "applicableFor": "2024-01-03",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-04T12:01:00+00:00",
+        "qualityIndicator": "L",
+        "substituted": "N",
+        "createdDate": "2024-01-04T12:01:14+00:00"
+      },
+      {
+        "applicableAt": "2024-01-04T00:00:00+00:00",
+        "applicableFor": "2024-01-04",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-05T12:01:01+00:00",
+        "qualityIndicator": "L",
+        "substituted": "N",
+        "createdDate": "2024-01-05T12:01:15+00:00"
+      },
+      {
+        "applicableAt": "2024-01-05T00:00:00+00:00",
+        "applicableFor": "2024-01-05",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-06T12:01:01+00:00",
+        "qualityIndicator": "L",
+        "substituted": "N",
+        "createdDate": "2024-01-06T12:01:15+00:00"
+      },
+      {
+        "applicableAt": "2024-01-06T00:00:00+00:00",
+        "applicableFor": "2024-01-06",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-07T12:01:01+00:00",
+        "qualityIndicator": "L",
+        "substituted": "N",
+        "createdDate": "2024-01-07T12:01:15+00:00"
+      },
+      {
+        "applicableAt": "2024-01-07T00:00:00+00:00",
+        "applicableFor": "2024-01-07",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-08T12:01:01+00:00",
+        "qualityIndicator": "L",
+        "substituted": "N",
+        "createdDate": "2024-01-08T12:01:15+00:00"
+      }
+    ]
+  },
+  {
+    "publicationId": "PUBOB1941",
+    "publicationName": "NTS Physical Flows, HumblyGrov, Storage",
+    "publications": [
+      {
+        "applicableAt": "2024-01-01T00:00:00+00:00",
+        "applicableFor": "2024-01-01",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-02T12:01:00+00:00",
+        "qualityIndicator": "L",
+        "substituted": "N",
+        "createdDate": "2024-01-02T12:01:14+00:00"
+      },
+      {
+        "applicableAt": "2024-01-02T00:00:00+00:00",
+        "applicableFor": "2024-01-02",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-03T12:01:00+00:00",
+        "qualityIndicator": "L",
+        "substituted": "N",
+        "createdDate": "2024-01-03T12:01:15+00:00"
+      },
+      {
+        "applicableAt": "2024-01-03T00:00:00+00:00",
+        "applicableFor": "2024-01-03",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-04T12:01:00+00:00",
+        "qualityIndicator": "L",
+        "substituted": "N",
+        "createdDate": "2024-01-04T12:01:14+00:00"
+      },
+      {
+        "applicableAt": "2024-01-04T00:00:00+00:00",
+        "applicableFor": "2024-01-04",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-05T12:01:01+00:00",
+        "qualityIndicator": "L",
+        "substituted": "N",
+        "createdDate": "2024-01-05T12:01:15+00:00"
+      },
+      {
+        "applicableAt": "2024-01-05T00:00:00+00:00",
+        "applicableFor": "2024-01-05",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-06T12:01:01+00:00",
+        "qualityIndicator": "L",
+        "substituted": "N",
+        "createdDate": "2024-01-06T12:01:15+00:00"
+      },
+      {
+        "applicableAt": "2024-01-06T00:00:00+00:00",
+        "applicableFor": "2024-01-06",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-07T12:01:01+00:00",
+        "qualityIndicator": "L",
+        "substituted": "N",
+        "createdDate": "2024-01-07T12:01:15+00:00"
+      },
+      {
+        "applicableAt": "2024-01-07T00:00:00+00:00",
+        "applicableFor": "2024-01-07",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-08T12:01:01+00:00",
+        "qualityIndicator": "L",
+        "substituted": "N",
+        "createdDate": "2024-01-08T12:01:15+00:00"
+      }
+    ]
+  },
+  {
+    "publicationId": "PUBOB1995",
+    "publicationName": "NTS Physical Flows, Rough, Storage",
+    "publications": [
+      {
+        "applicableAt": "2024-01-01T00:00:00+00:00",
+        "applicableFor": "2024-01-01",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-02T12:01:00+00:00",
+        "qualityIndicator": "L",
+        "substituted": "N",
+        "createdDate": "2024-01-02T12:01:14+00:00"
+      },
+      {
+        "applicableAt": "2024-01-02T00:00:00+00:00",
+        "applicableFor": "2024-01-02",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-03T12:01:00+00:00",
+        "qualityIndicator": "L",
+        "substituted": "N",
+        "createdDate": "2024-01-03T12:01:15+00:00"
+      },
+      {
+        "applicableAt": "2024-01-03T00:00:00+00:00",
+        "applicableFor": "2024-01-03",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-04T12:01:00+00:00",
+        "qualityIndicator": "L",
+        "substituted": "N",
+        "createdDate": "2024-01-04T12:01:14+00:00"
+      },
+      {
+        "applicableAt": "2024-01-04T00:00:00+00:00",
+        "applicableFor": "2024-01-04",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-05T12:01:01+00:00",
+        "qualityIndicator": "L",
+        "substituted": "N",
+        "createdDate": "2024-01-05T12:01:15+00:00"
+      },
+      {
+        "applicableAt": "2024-01-05T00:00:00+00:00",
+        "applicableFor": "2024-01-05",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-06T12:01:01+00:00",
+        "qualityIndicator": "L",
+        "substituted": "N",
+        "createdDate": "2024-01-06T12:01:15+00:00"
+      },
+      {
+        "applicableAt": "2024-01-06T00:00:00+00:00",
+        "applicableFor": "2024-01-06",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-07T12:01:01+00:00",
+        "qualityIndicator": "L",
+        "substituted": "N",
+        "createdDate": "2024-01-07T12:01:15+00:00"
+      },
+      {
+        "applicableAt": "2024-01-07T00:00:00+00:00",
+        "applicableFor": "2024-01-07",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-08T12:01:01+00:00",
+        "qualityIndicator": "L",
+        "substituted": "N",
+        "createdDate": "2024-01-08T12:01:15+00:00"
+      }
+    ]
+  },
+  {
+    "publicationId": "PUBOBJ11555",
+    "publicationName": "NTS Physical Flows, Stublach, Storage",
+    "publications": [
+      {
+        "applicableAt": "2024-01-01T00:00:00+00:00",
+        "applicableFor": "2024-01-01",
+        "value": "10.2448",
+        "generatedTimeStamp": "2024-01-02T12:01:00+00:00",
+        "qualityIndicator": "L",
+        "substituted": "N",
+        "createdDate": "2024-01-02T12:01:14+00:00"
+      },
+      {
+        "applicableAt": "2024-01-02T00:00:00+00:00",
+        "applicableFor": "2024-01-02",
+        "value": "1.60964",
+        "generatedTimeStamp": "2024-01-03T12:01:00+00:00",
+        "qualityIndicator": "L",
+        "substituted": "N",
+        "createdDate": "2024-01-03T12:01:15+00:00"
+      },
+      {
+        "applicableAt": "2024-01-03T00:00:00+00:00",
+        "applicableFor": "2024-01-03",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-04T12:01:00+00:00",
+        "qualityIndicator": "L",
+        "substituted": "N",
+        "createdDate": "2024-01-04T12:01:14+00:00"
+      },
+      {
+        "applicableAt": "2024-01-04T00:00:00+00:00",
+        "applicableFor": "2024-01-04",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-05T12:01:01+00:00",
+        "qualityIndicator": "L",
+        "substituted": "N",
+        "createdDate": "2024-01-05T12:01:15+00:00"
+      },
+      {
+        "applicableAt": "2024-01-05T00:00:00+00:00",
+        "applicableFor": "2024-01-05",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-06T12:01:01+00:00",
+        "qualityIndicator": "L",
+        "substituted": "N",
+        "createdDate": "2024-01-06T12:01:16+00:00"
+      },
+      {
+        "applicableAt": "2024-01-06T00:00:00+00:00",
+        "applicableFor": "2024-01-06",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-07T12:01:01+00:00",
+        "qualityIndicator": "L",
+        "substituted": "N",
+        "createdDate": "2024-01-07T12:01:15+00:00"
+      },
+      {
+        "applicableAt": "2024-01-07T00:00:00+00:00",
+        "applicableFor": "2024-01-07",
+        "value": "0",
+        "generatedTimeStamp": "2024-01-08T12:01:01+00:00",
+        "qualityIndicator": "L",
+        "substituted": "N",
+        "createdDate": "2024-01-08T12:01:15+00:00"
       }
     ]
   }
