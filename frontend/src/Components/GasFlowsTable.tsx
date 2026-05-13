@@ -67,7 +67,7 @@ export default function GasFlowsTable({ records, unit }: GasFlowsTableProps) {
         {
           header: "Cross Border Flows",
           columns: [
-            { header: "IUK", accessorFn: (row) => row.supply.cross_border_flows.iuk, cell: (info) => formatNumber(info.getValue() as NullableNumber) },
+            { header: "Interconnector", accessorFn: (row) => row.supply.cross_border_flows.interconnector, cell: (info) => formatNumber(info.getValue() as NullableNumber) },
             { header: "BBL", accessorFn: (row) => row.supply.cross_border_flows.bbl, cell: (info) => formatNumber(info.getValue() as NullableNumber) },
             { header: "Moffat", accessorFn: (row) => row.supply.cross_border_flows.moffat, cell: (info) => formatNumber(info.getValue() as NullableNumber) },
             { header: "Total Cross Border", accessorFn: (row) => row.supply.cross_border_flows.total, cell: (info) => formatNumber(info.getValue() as NullableNumber) }

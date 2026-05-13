@@ -45,13 +45,13 @@ DEMO_DATA_BY_CATEGORY: dict[str, list[dict[str, Any]]] = {
         {"gas_day": "2026-01-07", "easington_langeled": 24.0, "st_fergus_nsmp": 18.1, "st_fergus_shell": 16.0, "teesside": 7.0, "theddlethorpe": 3.5, "st_fergus_mobil": 10.0, "easington_dimlington": 6.0, "bacton_perenco": 11.1, "bacton_seal": 8.1, "bacton_shell": 15.2},
     ],
     "cross_border_flows": [
-        {"gas_day": "2026-01-01", "iuk": 15.0, "bbl": 12.0, "moffat": 6.5},
-        {"gas_day": "2026-01-02", "iuk": 15.5, "bbl": 12.5, "moffat": 6.7},
-        {"gas_day": "2026-01-03", "iuk": 15.8, "bbl": 12.3, "moffat": 6.9},
-        {"gas_day": "2026-01-04", "iuk": 15.6, "bbl": 12.2, "moffat": 7.0},
-        {"gas_day": "2026-01-05", "iuk": 14.9, "bbl": 11.8, "moffat": 6.4},
-        {"gas_day": "2026-01-06", "iuk": 14.8, "bbl": 11.7, "moffat": 6.4},
-        {"gas_day": "2026-01-07", "iuk": 16.0, "bbl": 12.6, "moffat": 6.9},
+        {"gas_day": "2026-01-01", "interconnector": 15.0, "bbl": 12.0, "moffat": 6.5},
+        {"gas_day": "2026-01-02", "interconnector": 15.5, "bbl": 12.5, "moffat": 6.7},
+        {"gas_day": "2026-01-03", "interconnector": 15.8, "bbl": 12.3, "moffat": 6.9},
+        {"gas_day": "2026-01-04", "interconnector": 15.6, "bbl": 12.2, "moffat": 7.0},
+        {"gas_day": "2026-01-05", "interconnector": 14.9, "bbl": 11.8, "moffat": 6.4},
+        {"gas_day": "2026-01-06", "interconnector": 14.8, "bbl": 11.7, "moffat": 6.4},
+        {"gas_day": "2026-01-07", "interconnector": 16.0, "bbl": 12.6, "moffat": 6.9},
     ],
 }
 
