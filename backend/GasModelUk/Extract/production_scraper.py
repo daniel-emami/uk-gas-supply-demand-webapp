@@ -5,9 +5,9 @@ import logging
 from typing import Any
 
 from GasModelUk.Constants.gas_flow_registry import PRODUCTION_GROUPS, UNIT
-from GasModelUk.Constants.scraper_registry import API_IDS, get_api_url
+from GasModelUk.Constants.scraper_registry import API_IDS
 from GasModelUk.Extract.base_scraper import BaseScraper
-from GasModelUk.Models.national_grid_post_request import NationalGridPostRequest
+from GasModelUk.Extract.request_creator import RequestCreator
 from GasModelUk.Models.ncs_gas_flow_record import NcsGasFlowRecord
 from GasModelUk.Models.raw_ncs_gas_flow_dataset import RawNcsGasFlowDataset
 from GasModelUk.Models.raw_production_gas_flow_dataset import RawProductionGasFlowDataset
@@ -16,8 +16,6 @@ from GasModelUk.Models.scrape_request import ScrapeRequest
 from GasModelUk.Models.ukcs_gas_flow_record import UkcsGasFlowRecord
 from GasModelUk.Utilities.date_utils import parse_gas_day
 from GasModelUk.Utilities.number_utils import sum_optional_values
-from GasModelUk.Extract.request_creator import RequestCreator
-
 
 logger = logging.getLogger(__name__)
 
@@ -50,7 +48,6 @@ class ProductionScraper(BaseScraper):
             len(dataset.ukcs.records),
         )
         return dataset
-
 
     def _parse_production_response(
         self,
