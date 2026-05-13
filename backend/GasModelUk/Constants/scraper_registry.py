@@ -42,11 +42,36 @@ API_IDS = {
             },
             "south_hook": "PUBOB3480",
         },
+        "production": {
+            "ncs": {
+                "easington_langeled": "PUBOB452",
+                "st_fergus_nsmp": "PUBOB434",
+                "st_fergus_shell": "PUBOB431",
+            },
+            "ukcs": {
+                "theddlethorpe": "PUBOB443",
+                "teesside_cats": {
+                    "publication_id": "PUBOB437",
+                    "output_field": "teesside",
+                },
+                "teesside_px": {
+                    "publication_id": "PUBOB440",
+                    "output_field": "teesside",
+                },
+                "st_fergus_shell": "PUBOB431",
+                "st_fergus_mobil": "PUBOB428",
+                "easington_dimlington": "PUBOB407",
+                "bacton_perenco": "PUBOB377",
+                "bacton_seal": "PUBOB389",
+                "bacton_shell": "PUBOB383",
+            },
+        },
     },
     "de_api_name": {
         "demand": {"placeholder": "DE_DEMAND_ID"},
     },
 }
+
 
 
 def get_api_url(source_name: str) -> str:
