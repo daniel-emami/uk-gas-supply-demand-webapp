@@ -6,9 +6,9 @@ import logging
 from GasModelUk.Constants.gas_flow_registry import UNIT
 from GasModelUk.DemoData.static_demo_data import DEMO_DATA_NOTICE, get_static_demo_rows
 from GasModelUk.Extract.base_scraper import BaseScraper
-from GasModelUk.Models.storage_gas_flow_record import StorageGasFlowRecord
 from GasModelUk.Models.raw_storage_gas_flow_dataset import RawStorageGasFlowDataset
 from GasModelUk.Models.scrape_request import ScrapeRequest
+from GasModelUk.Models.storage_gas_flow_record import StorageGasFlowRecord
 from GasModelUk.Utilities.date_utils import parse_gas_day
 
 logger = logging.getLogger(__name__)
@@ -33,5 +33,9 @@ class StorageScraper(BaseScraper):
             )
             for row in rows
         )
-        logger.info("Finished storage supply scraper with %s rows. %s", len(records), DEMO_DATA_NOTICE)
+        logger.info(
+            "Finished storage supply scraper with %s rows. %s",
+            len(records),
+            DEMO_DATA_NOTICE,
+        )
         return RawStorageGasFlowDataset(records=records, unit=UNIT, source_name="static_fake_demo")

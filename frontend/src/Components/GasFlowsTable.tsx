@@ -77,6 +77,7 @@ export default function GasFlowsTable({ records, unit }: GasFlowsTableProps) {
           header: "Storage",
           columns: [
             { header: "Aldbrough", accessorFn: (row) => row.supply.storage.aldbrough, cell: (info) => formatNumber(info.getValue() as NullableNumber) },
+            { header: "Avonmouth", accessorFn: (row) => row.supply.storage.avonmouth, cell: (info) => formatNumber(info.getValue() as NullableNumber) },
             { header: "Hatfield Moor", accessorFn: (row) => row.supply.storage.hatfield_moor, cell: (info) => formatNumber(info.getValue() as NullableNumber) },
             { header: "Hill Top Farm", accessorFn: (row) => row.supply.storage.hill_top_farm, cell: (info) => formatNumber(info.getValue() as NullableNumber) },
             { header: "Hole House Farm", accessorFn: (row) => row.supply.storage.holehouse_farm, cell: (info) => formatNumber(info.getValue() as NullableNumber) },
