@@ -62,8 +62,8 @@ class CrossBorderFlowsScraper(BaseScraper):
 
         values_by_day: dict[str, dict[str, float]] = {}
 
-        for demand_type in response_json:
-            publication_id = demand_type.get("publicationId")
+        for pipeline in response_json:
+            publication_id = pipeline.get("publicationId")
             if not isinstance(publication_id, str):
                 continue
 
@@ -71,7 +71,7 @@ class CrossBorderFlowsScraper(BaseScraper):
             if field_name is None:
                 continue
 
-            publications = demand_type.get("publications", [])
+            publications = pipeline.get("publications", [])
 
             for publication in publications:
                 gas_day = publication["applicableFor"]

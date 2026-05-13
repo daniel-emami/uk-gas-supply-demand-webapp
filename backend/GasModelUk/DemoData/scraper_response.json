@@ -1,46 +1,278 @@
-                {
-                  "name": "Volume",
-                  "parent": "Interconnector",
-                  "catalogueEntries": [
-                    {
-                      "name": "NTS Physical Flows, Bacton, Interconnector",
-                      "parent": "Volume",
-                      "frequency": "Daily",
-                      "publicationTime": "11:00",
-                      "unitOfMeasure": "mscm",
-                      "timeFrame": "",
-                      "status": "Existing",
-                      "statusChangeDate": "2023-06-26",
-                      "statusChangeDescription": "Existing Dis (Before EU2015)",
-                      "publicationId": "PUBOB2038",
-                      "description": "The aggregate physical quantity of gas offtaken from the System in the preceding Gas Flow Day at the given NTS Exit Point. Provided at approximately 11:00. "
-                    },
-                    {
-                      "name": "NTS Physical Flows, BactonBBL, Interconnector",
-                      "parent": "Volume",
-                      "frequency": "Daily",
-                      "publicationTime": "12:30",
-                      "unitOfMeasure": "mscm",
-                      "timeFrame": "",
-                      "status": "Existing",
-                      "statusChangeDate": "2023-06-26",
-                      "statusChangeDescription": "Existing Dis (Before EU2015)",
-                      "publicationId": "PUBOBJ1307",
-                      "description": "The aggregate physical quantity of gas offtaken from the System in the preceding Gas Flow Day at the given NTS Exit Point. Provided at approximately 11:00. "
-                    },
-                    {
-                      "name": "NTS Physical Flows, Moffat, Interconnector",
-                      "parent": "Volume",
-                      "frequency": "Daily",
-                      "publicationTime": "11:00",
-                      "unitOfMeasure": "mscm",
-                      "timeFrame": "",
-                      "status": "Existing",
-                      "statusChangeDate": "2023-06-26",
-                      "statusChangeDescription": "Existing Dis (Before EU2015)",
-                      "publicationId": "PUBOB2039",
-                      "description": "The aggregate physical quantity of gas offtaken from the System in the preceding Gas Flow Day at the given NTS Exit Point. Provided at approximately 11:00. "
-                    }
-                  ]
-                }
-                
+[
+  {
+    "publicationId": "PUBOB371",
+    "publicationName": "System Entry Volume, Grain NTS 1, D+2",
+    "publications": [
+      {
+        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableFor": "2024-01-01",
+        "value": "0",
+        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
+        "qualityIndicator": "",
+        "substituted": "N",
+        "createdDate": "2024-02-18T09:58:24+00:00"
+      },
+      {
+        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableFor": "2024-01-02",
+        "value": "0",
+        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
+        "qualityIndicator": "",
+        "substituted": "N",
+        "createdDate": "2024-02-18T09:58:24+00:00"
+      },
+      {
+        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableFor": "2024-01-03",
+        "value": "0",
+        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
+        "qualityIndicator": "",
+        "substituted": "N",
+        "createdDate": "2024-02-18T09:58:24+00:00"
+      },
+      {
+        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableFor": "2024-01-04",
+        "value": "0",
+        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
+        "qualityIndicator": "",
+        "substituted": "N",
+        "createdDate": "2024-02-18T09:58:24+00:00"
+      },
+      {
+        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableFor": "2024-01-05",
+        "value": "0",
+        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
+        "qualityIndicator": "",
+        "substituted": "N",
+        "createdDate": "2024-02-18T09:58:25+00:00"
+      },
+      {
+        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableFor": "2024-01-06",
+        "value": "0",
+        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
+        "qualityIndicator": "",
+        "substituted": "N",
+        "createdDate": "2024-02-18T09:58:25+00:00"
+      },
+      {
+        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableFor": "2024-01-07",
+        "value": "0",
+        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
+        "qualityIndicator": "",
+        "substituted": "N",
+        "createdDate": "2024-02-18T09:58:25+00:00"
+      }
+    ]
+  },
+  {
+    "publicationId": "PUBOB3473",
+    "publicationName": "System Entry Volume, Grain NTS 2, D+2",
+    "publications": [
+      {
+        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableFor": "2024-01-01",
+        "value": "13.65279",
+        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
+        "qualityIndicator": "",
+        "substituted": "N",
+        "createdDate": "2024-02-18T09:58:24+00:00"
+      },
+      {
+        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableFor": "2024-01-02",
+        "value": "8.91748",
+        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
+        "qualityIndicator": "",
+        "substituted": "N",
+        "createdDate": "2024-02-18T09:58:24+00:00"
+      },
+      {
+        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableFor": "2024-01-03",
+        "value": "14.33631",
+        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
+        "qualityIndicator": "",
+        "substituted": "N",
+        "createdDate": "2024-02-18T09:58:24+00:00"
+      },
+      {
+        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableFor": "2024-01-04",
+        "value": "18.21653",
+        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
+        "qualityIndicator": "",
+        "substituted": "N",
+        "createdDate": "2024-02-18T09:58:24+00:00"
+      },
+      {
+        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableFor": "2024-01-05",
+        "value": "18.19824",
+        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
+        "qualityIndicator": "",
+        "substituted": "N",
+        "createdDate": "2024-02-18T09:58:25+00:00"
+      },
+      {
+        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableFor": "2024-01-06",
+        "value": "17.48318",
+        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
+        "qualityIndicator": "",
+        "substituted": "N",
+        "createdDate": "2024-02-18T09:58:25+00:00"
+      },
+      {
+        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableFor": "2024-01-07",
+        "value": "17.65885",
+        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
+        "qualityIndicator": "",
+        "substituted": "N",
+        "createdDate": "2024-02-18T09:58:25+00:00"
+      }
+    ]
+  },
+  {
+    "publicationId": "PUBOB3564",
+    "publicationName": "System Entry Volume, Milford Haven - Dragon, D+2",
+    "publications": [
+      {
+        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableFor": "2024-01-01",
+        "value": "1.473",
+        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
+        "qualityIndicator": "",
+        "substituted": "N",
+        "createdDate": "2024-02-18T09:58:24+00:00"
+      },
+      {
+        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableFor": "2024-01-02",
+        "value": "0",
+        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
+        "qualityIndicator": "",
+        "substituted": "N",
+        "createdDate": "2024-02-18T09:58:24+00:00"
+      },
+      {
+        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableFor": "2024-01-03",
+        "value": "0",
+        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
+        "qualityIndicator": "",
+        "substituted": "N",
+        "createdDate": "2024-02-18T09:58:24+00:00"
+      },
+      {
+        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableFor": "2024-01-04",
+        "value": "12.101",
+        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
+        "qualityIndicator": "",
+        "substituted": "N",
+        "createdDate": "2024-02-18T09:58:24+00:00"
+      },
+      {
+        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableFor": "2024-01-05",
+        "value": "0",
+        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
+        "qualityIndicator": "",
+        "substituted": "N",
+        "createdDate": "2024-02-18T09:58:25+00:00"
+      },
+      {
+        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableFor": "2024-01-06",
+        "value": "16.913",
+        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
+        "qualityIndicator": "",
+        "substituted": "N",
+        "createdDate": "2024-02-18T09:58:25+00:00"
+      },
+      {
+        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableFor": "2024-01-07",
+        "value": "22.422",
+        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
+        "qualityIndicator": "",
+        "substituted": "N",
+        "createdDate": "2024-02-18T09:58:25+00:00"
+      }
+    ]
+  },
+  {
+    "publicationId": "PUBOB3480",
+    "publicationName": "System Entry Volume, South Hook, D+2",
+    "publications": [
+      {
+        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableFor": "2024-01-01",
+        "value": "23.2757",
+        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
+        "qualityIndicator": "",
+        "substituted": "N",
+        "createdDate": "2024-02-18T09:58:24+00:00"
+      },
+      {
+        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableFor": "2024-01-02",
+        "value": "30.2614",
+        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
+        "qualityIndicator": "",
+        "substituted": "N",
+        "createdDate": "2024-02-18T09:58:24+00:00"
+      },
+      {
+        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableFor": "2024-01-03",
+        "value": "30.8054",
+        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
+        "qualityIndicator": "",
+        "substituted": "N",
+        "createdDate": "2024-02-18T09:58:24+00:00"
+      },
+      {
+        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableFor": "2024-01-04",
+        "value": "23.0892",
+        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
+        "qualityIndicator": "",
+        "substituted": "N",
+        "createdDate": "2024-02-18T09:58:24+00:00"
+      },
+      {
+        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableFor": "2024-01-05",
+        "value": "23.0437",
+        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
+        "qualityIndicator": "",
+        "substituted": "N",
+        "createdDate": "2024-02-18T09:58:25+00:00"
+      },
+      {
+        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableFor": "2024-01-06",
+        "value": "23.5364",
+        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
+        "qualityIndicator": "",
+        "substituted": "N",
+        "createdDate": "2024-02-18T09:58:25+00:00"
+      },
+      {
+        "applicableAt": "2024-02-18T08:45:00+00:00",
+        "applicableFor": "2024-01-07",
+        "value": "23.4532",
+        "generatedTimeStamp": "2024-02-18T10:00:00+00:00",
+        "qualityIndicator": "",
+        "substituted": "N",
+        "createdDate": "2024-02-18T09:58:25+00:00"
+      }
+    ]
+  }
+]
