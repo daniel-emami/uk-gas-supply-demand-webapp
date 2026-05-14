@@ -18,7 +18,6 @@ class LngScraper(NationalGridPublicationScraper):
     """Async placeholder scraper for UK LNG flows."""
 
     category_key = "lng"
-    log_name = "LNG flow"
 
     def _records_from_response(
         self,

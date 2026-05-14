@@ -20,7 +20,6 @@ class CrossBorderFlowsScraper(NationalGridPublicationScraper):
     """Async placeholder scraper for UK cross-border flow flows."""
 
     category_key = "cross_border_flows"
-    log_name = "cross-border flow"
 
     def _records_from_response(
         self,

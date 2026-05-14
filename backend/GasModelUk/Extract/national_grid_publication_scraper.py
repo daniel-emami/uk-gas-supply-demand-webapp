@@ -19,12 +19,11 @@ class NationalGridPublicationScraper(BaseScraper):
     """Template scraper for National Grid publication-based gas flow categories."""
 
     source_name = "national_grid"
-    log_name: str | None = None
 
     async def scrape(self, request: ScrapeRequest) -> RawGasFlowDataset:
         """Scrape a National Grid publication category using the shared request flow."""
 
-        logger.info("Starting %s scraper", self._display_name)
+        logger.info("Starting %s scraper", self.category_key)
         await asyncio.sleep(0)
 
         request_creator = RequestCreator(
@@ -37,12 +36,8 @@ class NationalGridPublicationScraper(BaseScraper):
         response = api_request.send()
         records = self._records_from_response(response.json())
 
-        logger.info("Finished %s scraper with %s rows.", self._display_name, len(records))
+        logger.info("Finished %s scraper with %s rows.", self.category_key, len(records))
         return self._build_dataset(records)
-
-    @property
-    def _display_name(self) -> str:
-        return self.log_name or self.category_key.replace("_", " ")
 
     def _parse_values_by_day(
         self,
@@ -65,10 +60,10 @@ class NationalGridPublicationScraper(BaseScraper):
             if field_name is None:
                 continue
 
-            publications = publication_group.get("publications", [])
-            for publication in publications:
-                gas_day = publication["applicableFor"]
-                value = self._value_from_publication(publication.get("value"))
+            field_data_by_day = publication_group.get("publications", [])
+            for daily_data in field_data_by_day:
+                gas_day = daily_data["applicableFor"]
+                value = self._value_from_publication(daily_data.get("value"))
 
                 day_values = values_by_day.setdefault(gas_day, {})
                 day_values[field_name] = sum_optional_values(

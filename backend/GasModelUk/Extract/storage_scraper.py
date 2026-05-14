@@ -18,7 +18,6 @@ class StorageScraper(NationalGridPublicationScraper):
     """Async placeholder scraper for UK storage supply flows."""
 
     category_key = "storage"
-    log_name = "storage supply"
 
     def _records_from_response(
         self,
