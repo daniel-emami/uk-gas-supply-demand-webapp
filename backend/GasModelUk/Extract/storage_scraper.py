@@ -5,76 +5,26 @@ import logging
 from typing import Any
 
 from GasModelUk.Constants.gas_flow_registry import UNIT
-from GasModelUk.Constants.scraper_registry import API_IDS
-from GasModelUk.Extract.base_scraper import BaseScraper
+from GasModelUk.Extract.national_grid_publication_scraper import (
+    NationalGridPublicationScraper,
+)
 from GasModelUk.Models.raw_storage_gas_flow_dataset import RawStorageGasFlowDataset
 from GasModelUk.Models.scrape_request import ScrapeRequest
 from GasModelUk.Models.storage_gas_flow_record import StorageGasFlowRecord
 from GasModelUk.Utilities.date_utils import parse_gas_day
-from GasModelUk.Extract.request_creator import RequestCreator
-
-logger = logging.getLogger(__name__)
 
 
-class StorageScraper(BaseScraper):
+class StorageScraper(NationalGridPublicationScraper):
     """Async placeholder scraper for UK storage supply flows."""
 
-    source_name = "national_grid"
     category_key = "storage"
+    log_name = "storage supply"
 
-    async def scrape(self, request: ScrapeRequest) -> RawStorageGasFlowDataset:
-        """Return fake storage supply data for the requested gas days."""
-
-        logger.info("Starting storage supply scraper")
-        await asyncio.sleep(0)
-
-        request_creator = RequestCreator(
-            source_name=self.source_name,
-            category_key=self.category_key,
-            request=request,
-        )
-
-        api_request = request_creator.create_national_grid_post_request()
-        response = api_request.send()
-        records = self._parse_storage_flows_response(response.json())
-
-        logger.info(
-            "Finished storage supply scraper with %s rows. %s",
-            len(records),
-        )
-        return RawStorageGasFlowDataset(
-            records=records, unit=UNIT, source_name=self.source_name
-        )
-
-    def _parse_storage_flows_response(
+    def _records_from_response(
         self,
         response_json: list[dict[str, Any]],
     ) -> tuple[StorageGasFlowRecord, ...]:
-        id_to_field = {
-            publication_id: field_name
-            for field_name, publication_id in API_IDS[self.source_name][
-                self.category_key
-            ].items()
-        }
-
-        values_by_day: dict[str, dict[str, float]] = {}
-
-        for storage in response_json:
-            publication_id = storage.get("publicationId")
-            if not isinstance(publication_id, str):
-                continue
-
-            field_name = id_to_field.get(publication_id)
-            if field_name is None:
-                continue
-
-            publications = storage.get("publications", [])
-
-            for publication in publications:
-                gas_day = publication["applicableFor"]
-                value = publication["value"]
-
-                values_by_day.setdefault(gas_day, {})[field_name] = float(value)
+        values_by_day = self._parse_values_by_day(response_json)
 
         return tuple(
             StorageGasFlowRecord(
@@ -83,6 +33,12 @@ class StorageScraper(BaseScraper):
             )
             for gas_day, values in sorted(values_by_day.items())
         )
+
+    def _build_dataset(
+        self,
+        records: tuple[StorageGasFlowRecord, ...],
+    ) -> RawStorageGasFlowDataset:
+        return RawStorageGasFlowDataset(records=records, unit=UNIT, source_name=self.source_name)
 
 
 if __name__ == "__main__":

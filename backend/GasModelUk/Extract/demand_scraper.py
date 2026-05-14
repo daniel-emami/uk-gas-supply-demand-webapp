@@ -4,75 +4,26 @@ import asyncio
 import logging
 from typing import Any
 
-from GasModelUk.Constants.scraper_registry import API_IDS
 from GasModelUk.Constants.gas_flow_registry import UNIT
-from GasModelUk.Extract.base_scraper import BaseScraper
-from GasModelUk.Extract.request_creator import RequestCreator
+from GasModelUk.Extract.national_grid_publication_scraper import (
+    NationalGridPublicationScraper,
+)
 from GasModelUk.Models.demand_gas_flow_record import DemandGasFlowRecord
 from GasModelUk.Models.raw_demand_gas_flow_dataset import RawDemandGasFlowDataset
 from GasModelUk.Models.scrape_request import ScrapeRequest
 from GasModelUk.Utilities.date_utils import parse_gas_day
 
-logger = logging.getLogger(__name__)
 
-
-class DemandScraper(BaseScraper):
+class DemandScraper(NationalGridPublicationScraper):
     """Async placeholder scraper for UK gas demand flows."""
 
-    source_name = "national_grid"
     category_key = "demand"
 
-    async def scrape(self, request: ScrapeRequest) -> RawDemandGasFlowDataset:
-        """Return fake signed demand data for the requested gas days."""
-
-        logger.info("Starting demand scraper")
-        await asyncio.sleep(0)
-
-        request_creator = RequestCreator(
-            source_name=self.source_name,
-            category_key=self.category_key,
-            request=request,
-        )
-
-        api_request = request_creator.create_national_grid_post_request()
-        response = api_request.send()
-        records = self._parse_demand_response(response.json())
-
-        logger.info("Finished demand scraper with %s rows. %s", len(records))
-
-        return RawDemandGasFlowDataset(
-            records=records, unit=UNIT, source_name=self.source_name
-        )
-
-    def _parse_demand_response(
+    def _records_from_response(
         self,
         response_json: list[dict[str, Any]],
     ) -> tuple[DemandGasFlowRecord, ...]:
-        id_to_field = {
-            publication_id: field_name
-            for field_name, publication_id in API_IDS[self.source_name][
-                self.category_key
-            ].items()
-        }
-
-        values_by_day: dict[str, dict[str, float]] = {}
-
-        for demand_type in response_json:
-            publication_id = demand_type.get("publicationId")
-            if not isinstance(publication_id, str):
-                continue
-
-            field_name = id_to_field.get(publication_id)
-            if field_name is None:
-                continue
-
-            publications = demand_type.get("publications", [])
-
-            for publication in publications:
-                gas_day = publication["applicableFor"]
-                value = publication["value"]
-
-                values_by_day.setdefault(gas_day, {})[field_name] = -abs(float(value))
+        values_by_day = self._parse_values_by_day(response_json)
 
         return tuple(
             DemandGasFlowRecord(
@@ -83,6 +34,18 @@ class DemandScraper(BaseScraper):
             )
             for gas_day, values in sorted(values_by_day.items())
         )
+
+    def _value_from_publication(self, value: Any) -> float | None:
+        parsed_value = super()._value_from_publication(value)
+        if parsed_value is None:
+            return None
+        return -abs(parsed_value)
+
+    def _build_dataset(
+        self,
+        records: tuple[DemandGasFlowRecord, ...],
+    ) -> RawDemandGasFlowDataset:
+        return RawDemandGasFlowDataset(records=records, unit=UNIT, source_name=self.source_name)
 
 
 if __name__ == "__main__":
