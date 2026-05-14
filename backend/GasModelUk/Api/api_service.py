@@ -54,7 +54,6 @@ class ApiService:
         records = [self._build_daily_record(gas_day, frames).to_payload() for gas_day in gas_days]
         return {
             "unit": UNIT,
-            "is_demo_data": self.excel_path.name == "demo_data.xlsx",
             "records": records,
         }
 
@@ -73,7 +72,6 @@ class ApiService:
             records.append({"gas_day": record["gas_day"], section_key: section_payload})
         return {
             "unit": full_payload["unit"],
-            "is_demo_data": full_payload["is_demo_data"],
             "section": section_key,
             "records": records,
         }

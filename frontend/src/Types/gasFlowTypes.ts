@@ -71,6 +71,37 @@ export interface GasFlowRecord {
 
 export interface GasFlowsResponse {
   unit: string;
-  is_demo_data: boolean;
   records: GasFlowRecord[];
 }
+
+export type RefreshScope =
+  | "all"
+  | "supply"
+  | "demand"
+  | "production"
+  | "lng"
+  | "storage"
+  | "cross_border_flows";
+
+export interface DateRangeFilters {
+  startDate?: string;
+  endDate?: string;
+}
+
+export interface SectionRecordMap {
+  demand: DemandRecord;
+  production: {
+    ncs: NcsRecord;
+    ukcs: UkcsRecord;
+    total: NullableNumber;
+  };
+  lng: LngRecord;
+  storage: StorageRecord;
+  cross_border_flows: CrossBorderFlowsRecord;
+}
+
+export type SectionResponse<TScope extends Exclude<RefreshScope, "all" | "supply">> = {
+  unit: string;
+  section: TScope;
+  records: Array<{ gas_day: string } & Pick<SectionRecordMap, TScope>>;
+};

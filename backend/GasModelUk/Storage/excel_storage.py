@@ -45,7 +45,10 @@ class ExcelStorage(BaseStorage):
     def read_all_category_sheets(self) -> dict[str, pd.DataFrame]:
         """Read all registered category sheets from Excel."""
 
-        return {category_key: self.read_category_sheet(category_key) for category_key in CATEGORY_KEYS}
+        return {
+            category_key: self.read_category_sheet(category_key)
+            for category_key in CATEGORY_KEYS
+        }
 
     def write_category_sheets(self, datasets: list[TransformedGasFlowDataset]) -> None:
         """Write each supplied category sheet independently to Excel."""
@@ -58,9 +61,14 @@ class ExcelStorage(BaseStorage):
         sheet_name = get_sheet_name(dataset.category_key)
         expected_columns = list(get_expected_sheet_columns(dataset.category_key))
         frame = pd.DataFrame(dataset.rows)
+        frame = self._merge_with_existing_rows(dataset.category_key, frame)
         for column in expected_columns:
             if column not in frame.columns:
-                logger.warning("Adding missing column %s to %s before Excel write", column, sheet_name)
+                logger.warning(
+                    "Adding missing column %s to %s before Excel write",
+                    column,
+                    sheet_name,
+                )
                 frame[column] = pd.NA
         frame = frame[expected_columns]
         logger.info("Writing Excel sheet %s to %s", sheet_name, self.workbook_path)
@@ -78,6 +86,26 @@ class ExcelStorage(BaseStorage):
                     frame.to_excel(writer, sheet_name=sheet_name, index=False, na_rep="")
         except Exception as exc:
             raise ExcelStorageError(f"Failed to write sheet {sheet_name}: {exc}") from exc
+
+    def _merge_with_existing_rows(self, category_key: str, frame: pd.DataFrame) -> pd.DataFrame:
+        if not self.workbook_path.exists():
+            return frame
+        try:
+            existing_frame = self.read_category_sheet(category_key)
+        except ExcelStorageError:
+            return frame
+
+        if existing_frame.empty:
+            return frame
+
+        frame = frame.copy()
+        frame["gas_day"] = frame["gas_day"].map(self._format_excel_gas_day)
+        combined = pd.concat([existing_frame, frame], ignore_index=True)
+        return (
+            combined.drop_duplicates(subset=["gas_day"], keep="last")
+            .sort_values("gas_day")
+            .reset_index(drop=True)
+        )
 
     def _validate_and_normalize_frame(self, category_key: str, frame: pd.DataFrame) -> pd.DataFrame:
         expected_columns = list(get_expected_sheet_columns(category_key))

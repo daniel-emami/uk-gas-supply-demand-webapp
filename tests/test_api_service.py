@@ -10,7 +10,7 @@ from GasModelUk.Api.api_service import ApiService
 
 class ApiServiceTests(unittest.TestCase):
     def test_build_daily_record_calculates_totals_and_balance(self) -> None:
-        service = ApiService("data/demo_data.xlsx")
+        service = ApiService("data/gas_flows.xlsx")
         frames = {
             "demand": pd.DataFrame(
                 [
@@ -78,7 +78,7 @@ class ApiServiceTests(unittest.TestCase):
         self.assertEqual(payload["balance"], 18.0)
 
     def test_number_or_none_converts_nan_to_none(self) -> None:
-        service = ApiService("data/demo_data.xlsx")
+        service = ApiService("data/gas_flows.xlsx")
 
         self.assertIsNone(service._number_or_none(float("nan")))
         self.assertEqual(service._number_or_none("2.1234"), 2.123)

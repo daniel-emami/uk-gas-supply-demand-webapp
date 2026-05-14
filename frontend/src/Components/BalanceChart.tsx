@@ -24,9 +24,12 @@ export default function BalanceChart({ records, unit }: BalanceChartProps) {
   }));
 
   return (
-    <section className="card">
+    <section className="panel">
       <div className="section-heading">
-        <h2>Supply, demand, and balance</h2>
+        <div>
+          <h2>Supply, demand, and balance</h2>
+          <p>Totals by gas day.</p>
+        </div>
         <span>{unit}</span>
       </div>
       <div className="chart-container">
@@ -37,9 +40,30 @@ export default function BalanceChart({ records, unit }: BalanceChartProps) {
             <YAxis />
             <Tooltip />
             <Legend />
-            <Line type="monotone" dataKey="demand" name="Demand" stroke="#b45309" strokeWidth={2} dot={false} />
-            <Line type="monotone" dataKey="supply" name="Supply" stroke="#047857" strokeWidth={2} dot={false} />
-            <Line type="monotone" dataKey="balance" name="Balance" stroke="#1d4ed8" strokeWidth={2} dot={false} />
+            <Line
+              type="monotone"
+              dataKey="demand"
+              name="Demand"
+              stroke="#b45309"
+              strokeWidth={2}
+              dot={false}
+            />
+            <Line
+              type="monotone"
+              dataKey="supply"
+              name="Supply"
+              stroke="#0f766e"
+              strokeWidth={2}
+              dot={false}
+            />
+            <Line
+              type="monotone"
+              dataKey="balance"
+              name="Balance"
+              stroke="#2563eb"
+              strokeWidth={2}
+              dot={false}
+            />
           </LineChart>
         </ResponsiveContainer>
       </div>

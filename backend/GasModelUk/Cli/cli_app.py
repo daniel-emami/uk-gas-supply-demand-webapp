@@ -25,7 +25,7 @@ def run_etl(
 
     configure_logging()
     settings = AppSettings()
-    selected_output_path = output_path or settings.default_real_excel_path
+    selected_output_path = output_path or settings.default_excel_path
     result = asyncio.run(EtlPipeline(selected_output_path).run(start_date=start_date, end_date=end_date))
     typer.echo(f"ETL complete. Output: {result.output_path}")
     typer.echo(f"Successful categories: {', '.join(result.successful_categories) or 'none'}")
@@ -42,7 +42,7 @@ def run_api(
 
     configure_logging()
     settings = AppSettings()
-    selected_excel_path = excel_path or settings.default_demo_excel_path
+    selected_excel_path = excel_path or settings.default_excel_path
     selected_host = host or settings.api_host
     selected_port = port or settings.api_port
     logging.getLogger(__name__).info(

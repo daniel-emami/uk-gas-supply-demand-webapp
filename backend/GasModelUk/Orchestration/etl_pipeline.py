@@ -28,27 +28,44 @@ class EtlPipeline:
         self.transformer = GasFlowTransformer()
         self.storage = ExcelStorage(self.output_path)
 
-    async def run(self, start_date: str, end_date: str) -> EtlResult:
+    async def run(
+        self,
+        start_date: str,
+        end_date: str,
+        category_keys: tuple[str, ...] = CATEGORY_KEYS,
+    ) -> EtlResult:
         """Run all category scrapers concurrently for an inclusive gas day range."""
 
         ensure_date_order(start_date, end_date)
-        logger.info("Starting ETL run from %s to %s", start_date, end_date)
+        logger.info(
+            "Starting ETL run from %s to %s for categories: %s",
+            start_date,
+            end_date,
+            category_keys,
+        )
         request = ScrapeRequest(start_date=start_date, end_date=end_date)
-        scrape_results = await self._scrape_all(request)
+        scrape_results = await self._scrape_all(request, category_keys)
 
         successful_datasets: list[TransformedGasFlowDataset] = []
         failed_categories: list[str] = []
 
         for category_key, result in scrape_results.items():
             if isinstance(result, Exception):
-                logger.exception("Scraper/category failed and will be preserved: %s", category_key, exc_info=result)
+                logger.exception(
+                    "Scraper/category failed and will be preserved: %s",
+                    category_key,
+                    exc_info=result,
+                )
                 failed_categories.append(category_key)
                 continue
             try:
                 transformed = self.transformer.transform(result)
                 successful_datasets.append(transformed)
-            except Exception as exc:
-                logger.exception("Transform failed and existing sheet will be preserved: %s", category_key)
+            except Exception:
+                logger.exception(
+                    "Transform failed and existing sheet will be preserved: %s",
+                    category_key,
+                )
                 failed_categories.append(category_key)
 
         if successful_datasets:
@@ -64,8 +81,15 @@ class EtlPipeline:
         )
         return EtlResult(successful_categories, tuple(failed_categories), self.output_path)
 
-    async def _scrape_all(self, request: ScrapeRequest) -> dict[str, RawGasFlowDataset | Exception]:
-        scrapers = [self.scraper_factory.create(category_key) for category_key in CATEGORY_KEYS]
+    async def _scrape_all(
+        self,
+        request: ScrapeRequest,
+        category_keys: tuple[str, ...],
+    ) -> dict[str, RawGasFlowDataset | Exception]:
+        scrapers = [self.scraper_factory.create(category_key) for category_key in category_keys]
         tasks = [scraper.scrape(request) for scraper in scrapers]
         results = await asyncio.gather(*tasks, return_exceptions=True)
-        return {scraper.category_key: result for scraper, result in zip(scrapers, results, strict=True)}
+        return {
+            scraper.category_key: result
+            for scraper, result in zip(scrapers, results, strict=True)
+        }

@@ -3,6 +3,7 @@ from __future__ import annotations
 from fastapi import APIRouter, HTTPException, Query, Request
 
 from GasModelUk.Api.api_service import ApiService
+from GasModelUk.Api.etl_service import EtlService
 from GasModelUk.Exceptions.api_data_error import ApiDataError
 from GasModelUk.Utilities.date_utils import ensure_date_order
 
@@ -13,6 +14,12 @@ def get_api_service(request: Request) -> ApiService:
     """Return the configured API service from FastAPI application state."""
 
     return request.app.state.api_service
+
+
+def get_etl_service(request: Request) -> EtlService:
+    """Return the configured ETL service from FastAPI application state."""
+
+    return request.app.state.etl_service
 
 
 def validate_date_filters(start_date: str | None, end_date: str | None) -> None:
@@ -114,6 +121,28 @@ def get_cross_border_flows(
     """Return cross-border supply flows as daily records."""
 
     return _get_section(request, "cross_border_flows", start_date, end_date)
+
+
+@router.post("/api/etl/run")
+async def run_etl(
+    request: Request,
+    scope: str = Query(default="all"),
+    start_date: str = Query(...),
+    end_date: str = Query(...),
+) -> dict:
+    """Run ETL for a selected scope and date range, then update the API workbook."""
+
+    validate_date_filters(start_date, end_date)
+    try:
+        result = await get_etl_service(request).run_scope(scope, start_date, end_date)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+    return {
+        "scope": scope,
+        "successful_categories": list(result.successful_categories),
+        "failed_categories": list(result.failed_categories),
+        "output_path": str(result.output_path),
+    }
 
 
 def _get_section(

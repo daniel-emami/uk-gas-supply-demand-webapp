@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Any, TypeAlias
+from typing import Any
 
-GasFlowsPayload: TypeAlias = dict[str, Any]
-GasFlowRecordPayload: TypeAlias = dict[str, Any]
+type GasFlowsPayload = dict[str, Any]
+type GasFlowRecordPayload = dict[str, Any]
