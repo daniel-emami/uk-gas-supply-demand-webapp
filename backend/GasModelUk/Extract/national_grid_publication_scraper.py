@@ -83,10 +83,7 @@ class NationalGridPublicationScraper(BaseScraper):
         return float(value)
 
     @abstractmethod
-    def _records_from_response(
-        self,
-        response_json: list[dict[str, Any]],
-    ) -> tuple[Any, ...]:
+    def _records_from_response(self, response_json: list[dict[str, Any]]) -> tuple[Any, ...]:
         """Build category-specific record objects from a publication API response."""
 
     @abstractmethod
