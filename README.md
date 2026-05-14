@@ -188,4 +188,10 @@ Lint focused backend areas with Ruff:
 uv run ruff check backend/GasModelUk/Extract
 ```
 
-The repository has a Ruff config, but a full-repo Ruff pass still needs unrelated cleanup in older files. There are no tests yet. The `tests/` folder is present for future pytest tests.
+The repository has a Ruff config, but a full-repo Ruff pass still needs unrelated cleanup in older files.
+
+Run the backend tests with:
+
+```bash
+PYTHONPATH=backend python -m unittest discover -s tests
+```
