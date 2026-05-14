@@ -10,7 +10,7 @@ Scrapers → Transform layer → Excel storage → FastAPI API layer → React f
 
 The frontend never scrapes or reads Excel directly. It calls the FastAPI backend, and the backend reads Excel and returns JSON.
 
-> **Demo data warning:** `data/demo_data.xlsx` contains fake static demo data for development only. It is not real UK gas market data. The initial `data/gas_flows.xlsx` file is also seeded with the same fake data so the repository works immediately after cloning.
+> **Demo data warning:** `data/demo_data.xlsx` contains fake static demo data for development only. It is not real UK gas market data. The initial `data/gas_flows.xlsx` file may also be seeded with demo-style data so the repository works immediately after cloning.
 
 ## Requirements
 
@@ -173,17 +173,19 @@ curl "http://localhost:8000/api/gas-flows?start_date=2026-01-01&end_date=2026-01
 
 ## Current scraper status
 
-The scraper layer is intentionally asynchronous and modular, but each scraper currently returns deterministic fake placeholder data.
+The ETL scraper layer now targets National Gas publication endpoints configured in `backend/GasModelUk/Constants/scraper_registry.py`.
 
-TODO comments mark where real National Grid / National Gas implementation should be added later.
+- Demand, storage, LNG, and cross-border flows share the `NationalGridPublicationScraper` template.
+- Production remains separate because it splits the response into NCS and UKCS datasets.
+- Some National Gas publication IDs map to the same output field. For example, two Isle of Grain LNG IDs are summed into `isle_of_grain`.
+- The demo workbook and `DemoData/` package are still fake development fixtures; they are not market data.
 
 ## Development helpers
 
-Lint and format with Ruff:
+Lint focused backend areas with Ruff:
 
 ```bash
-uv run ruff check .
-uv run ruff format .
+uv run ruff check backend/GasModelUk/Extract
 ```
 
-There are no tests yet. The `tests/` folder is present for future pytest tests.
+The repository has a Ruff config, but a full-repo Ruff pass still needs unrelated cleanup in older files. There are no tests yet. The `tests/` folder is present for future pytest tests.
