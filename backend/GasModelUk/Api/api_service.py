@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import logging
 from pathlib import Path
-from typing import Any
+from typing import Any, cast
 
 import pandas as pd
 
@@ -115,9 +115,11 @@ class ApiService:
     ) -> pd.DataFrame:
         if start_date is None and end_date is None:
             return frame
-        mask = frame["gas_day"].map(
-            lambda gas_day: is_within_date_filter(gas_day, start_date, end_date)
-        )
+
+        def is_gas_day_in_range(gas_day: object) -> bool:
+            return is_within_date_filter(str(gas_day), start_date, end_date)
+
+        mask = frame["gas_day"].map(is_gas_day_in_range)
         return frame.loc[mask].reset_index(drop=True)
 
     def _get_sorted_gas_days(self, frames: dict[str, pd.DataFrame]) -> list[str]:
@@ -202,7 +204,7 @@ class ApiService:
         matches = frame.loc[frame["gas_day"] == gas_day]
         if matches.empty:
             return {}
-        return matches.iloc[0].to_dict()
+        return cast(dict[str, Any], matches.iloc[0].to_dict())
 
     def _number_or_none(self, value: Any) -> float | None:
         if value is None or pd.isna(value):
