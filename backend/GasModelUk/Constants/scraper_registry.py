@@ -92,17 +92,17 @@ def _flatten_publication_entries(
     entries: dict[str, object],
 ) -> dict[str, str | dict[str, str]]:
     flattened: dict[str, str | dict[str, str]] = {}
-    for field_name, entry in entries.items():
-        if isinstance(entry, str):
-            flattened[field_name] = entry
+    for site, id in entries.items():
+        if isinstance(id, str):
+            flattened[site] = id
             continue
 
-        if isinstance(entry, dict) and "publication_id" not in entry:
-            flattened.update(_flatten_publication_entries(cast(dict[str, object], entry)))
+        if isinstance(id, dict) and "publication_id" not in id:
+            flattened.update(_flatten_publication_entries(cast(dict[str, object], id)))
             continue
 
-        if isinstance(entry, dict):
-            flattened[field_name] = cast(dict[str, str], entry)
+        if isinstance(id, dict):
+            flattened[site] = cast(dict[str, str], id)
     return flattened
 
 
@@ -112,8 +112,8 @@ def get_ids_by_type(source_name: str, category_key: str) -> dict[str, str]:
     entries = API_IDS.get(source_name, {}).get(category_key, {})
     flattened_entries = _flatten_publication_entries(entries)
     return {
-        field_name: _publication_entry_to_id(entry)
-        for field_name, entry in flattened_entries.items()
+        site: _publication_entry_to_id(entry)
+        for site, entry in flattened_entries.items()
     }
 
 
@@ -126,10 +126,10 @@ def get_output_field_by_publication_id(
     entries = API_IDS.get(source_name, {}).get(category_key, {})
     flattened_entries = _flatten_publication_entries(entries)
     output_fields: dict[str, str] = {}
-    for field_name, entry in flattened_entries.items():
+    for site, entry in flattened_entries.items():
         publication_id = _publication_entry_to_id(entry)
         if isinstance(entry, str):
-            output_fields[publication_id] = field_name
+            output_fields[publication_id] = site
         else:
-            output_fields[publication_id] = entry.get("output_field", field_name)
+            output_fields[publication_id] = entry.get("output_field", site)
     return output_fields

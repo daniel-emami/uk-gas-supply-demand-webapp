@@ -7,8 +7,6 @@ from typing import Any
 from GasModelUk.Constants.gas_flow_registry import UNIT
 from GasModelUk.Constants.scraper_registry import API_IDS
 from GasModelUk.Extract.base_scraper import BaseScraper
-from GasModelUk.Extract.cross_border_flows_scraper import CrossBorderFlowsScraper
-from GasModelUk.Models.lng_gas_flow_record import LngGasFlowRecord
 from GasModelUk.Models.raw_storage_gas_flow_dataset import RawStorageGasFlowDataset
 from GasModelUk.Models.scrape_request import ScrapeRequest
 from GasModelUk.Models.storage_gas_flow_record import StorageGasFlowRecord

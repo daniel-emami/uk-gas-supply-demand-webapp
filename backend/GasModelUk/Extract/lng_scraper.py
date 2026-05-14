@@ -28,6 +28,7 @@ class LngScraper(BaseScraper):
 
         logger.info("Starting LNG scraper")
         await asyncio.sleep(0)
+
         request_creator = RequestCreator(
             source_name=self.source_name,
             category_key=self.category_key,
